@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets'
+import Profile from '@assets/images/profile.png'
+import Link from '@components/Link.astro'
+import CV from '@assets/docs/Ariel_Salgado_CV.pdf?url'
+
+const skills: Array<string> = [
+  'Frameworks de JavaScript',
+  'Data Analysis con Pandas',
+  'Backend con NodeJS',
+  'Machine Learning con Scikit-Learn',
+  'Bases de datos con MySQL',
+  'Contenedores con Docker',
+]
+---
+
+<div
+  class='grid lg:grid-cols-5 grid-cols-1 grid-rows-1 items-center gap-y-10 gap-x-2'>
+  <div
+    class='grid lg:col-span-3 col-span-1 lg:gap-4 gap-2 text-slate lg:text-base text-sm'>
+    <p>
+      Hola!, soy Ariel Salgado, estudiante de Ingeniería
+      Civil en Informática en la Universidad de Valparaíso.
+      Me considero una <span class='text-primary'
+        >persona apasionada por la tecnología y la
+        programación</span
+      >. Me caracterizo por ser alguien proactivo,
+      responsable, trabajador y con ganas de aprender cosas
+      nuevas.
+    </p>
+    <p>
+      En el transcurso de mi carrera he tenido la
+      oportunidad de trabajar junto a personas, empresas, e
+      instituciones, que me han permitido desarrollar
+      <span class='text-primary'
+        >habilidades de trabajo en equipo y de comunicación</span
+      >.
+    </p>
+    <p>
+      Mi enfoque se centra en la <span class='text-primary'
+        >calidad y eficiencia</span
+      > del código, utilizando metodologías ágiles para garantizar
+      la entrega de <span class='text-primary'
+        >soluciones de alta calidad</span
+      > en plazos acotados.
+    </p>
+    <p>
+      Actualmente estoy ampliando mis habilidades en el
+      campo del <span class='text-primary'
+        >data science</span
+      > a través de la obtención de <span
+        class='text-primary'>nuevas certificaciones</span
+      >. Estoy <span class='text-primary'
+        >abierto a nuevas oportunidades laborales</span
+      > que me permitan seguir desarrollandome profesionalmente,
+      que sean un desafío para mis habilidades y poner a prueba
+      mis <span class='text-primary'
+        >conocimientos y experiencia</span
+      >.
+    </p>
+    <p>
+      Mi experiencia en el campo se ha centrado en una
+      variedad de herramientas y tecnologías, incluyendo
+      algunas que he utilizado con mayor frecuencia. Entre
+      ellas se encuentran:
+    </p>
+
+    <ul
+      class='grid sm:grid-cols-2 grid-cols-1 sm:justify-self-center mt-4'>
+      {
+        skills.map(skill => (
+          <li class="flex whitespace-nowrap gap-1 before:content-['>'] before:text-primary py-0.5">
+            {skill}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div
+    class='grid lg:col-span-2 col-span-1 justify-self-center self-start gap-10 lg:mt-6'>
+    <div
+      class='lg:w-72 w-64 lg:h-72 h-64 border-2 border-primary rounded-xl p-2.5'>
+      <Image
+        src={Profile}
+        alt='Ariel Salgado'
+        format={'avif'}
+        quality={'high'}
+        height={288}
+        width={288}
+        loading={'lazy'}
+        class='grayscale hover:grayscale-0 brightness-90 transition-all duration-500 rounded-md'
+      />
+    </div>
+    <div class='justify-self-center'>
+      <Link href={CV} download={'Ariel_Salgado_CV.pdf'}>
+        Descargar CV
+      </Link>
+    </div>
+  </div>
+</div>

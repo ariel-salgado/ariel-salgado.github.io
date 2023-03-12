@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets'
+
+import Cens from '@assets/images/cens.png'
+import Rest from '@assets/images/rest911.png'
+import Docmovi from '@assets/images/docmovi.png'
+import Musa from '@assets/images/musa.png'
+import Consorcio from '@assets/images/consorcio.png'
+---
+
+<ul class='grid grid-cols-5 auto-rows-min'>
+  <li
+    class='w-fit h-fit col-start-1 row-start-1 col-span-3 row-span-4 bg-navy border-2 border-primary p-2 rounded-xl'>
+    <Image
+      src={Cens}
+      alt='Cens Tech Challenge 2019'
+      format={'avif'}
+      quality={'high'}
+      height={150}
+      width={267}
+      loading={'lazy'}
+      class='grayscale hover:grayscale-0 brightness-90 transition-all duration-300 rounded-md'
+    />
+  </li>
+  <li
+    class='w-fit h-fit col-start-3 row-start-4 col-span-3 row-span-4 bg-navy border-2 border-primary p-2 rounded-xl z-10'>
+    <Image
+      src={Rest}
+      alt='Rest911'
+      format={'avif'}
+      quality={'high'}
+      height={150}
+      width={267}
+      loading={'lazy'}
+      class='grayscale hover:grayscale-0 brightness-90 transition-all duration-300 rounded-md'
+    />
+  </li>
+  <li
+    class='w-fit h-fit col-start-1 row-start-7 col-span-3 row-span-4 bg-navy border-2 border-primary p-2 rounded-xl z-20'>
+    <Image
+      src={Docmovi}
+      alt='Docmovi'
+      format={'avif'}
+      quality={'high'}
+      height={150}
+      width={267}
+      loading={'lazy'}
+      class='grayscale hover:grayscale-0 brightness-90 transition-all duration-300 rounded-md'
+    />
+  </li>
+  <li
+    class='w-fit h-fit col-start-3 row-start-[10] col-span-3 row-span-4 bg-navy border-2 border-primary p-2 rounded-xl z-30'>
+    <Image
+      src={Musa}
+      alt='Musa'
+      format={'avif'}
+      quality={'high'}
+      height={150}
+      width={267}
+      loading={'lazy'}
+      class='grayscale hover:grayscale-0 brightness-90 transition-all duration-300 rounded-md'
+    />
+  </li>
+  <li
+    class='w-fit h-fit col-start-1 row-start-[13] col-span-3 row-span-4 bg-navy border-2 border-primary p-2 rounded-xl z-40'>
+    <Image
+      src={Consorcio}
+      alt='Consorcio progresa'
+      format={'avif'}
+      quality={'high'}
+      height={150}
+      width={267}
+      loading={'lazy'}
+      class='grayscale hover:grayscale-0 brightness-90 transition-all duration-300 rounded-md'
+    />
+  </li>
+</ul>

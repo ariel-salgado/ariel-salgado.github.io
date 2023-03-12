@@ -1,0 +1,55 @@
+---
+import Timeline from '@components/Timeline.astro'
+import Collage from '@components/Collage.astro'
+
+const items: Array<{
+  date: string
+  title: string
+  description: string
+}> = [
+  {
+    date: 'Marzo 2016 - Actualidad',
+    title: 'Ingeniería Civil en Informática',
+    description: 'Universidad de Valparaíso, Chile.',
+  },
+  {
+    date: 'Abril 2019 - Noviembre 2019',
+    title: 'Carnet Digital | CENS Tech Challenge',
+    description:
+      'Concurso a nivel nacional de emprendimientos digitales y tecnológicos para potenciar la interoperabilidad de la salud.',
+  },
+  {
+    date: 'Septiembre 2020 - Junio 2021',
+    title: 'Fullstack Developer | Rest911',
+    description:
+      'Desarrollo de servicio de pago con WebPay, sistema para gestión de usuarios con cobros automáticos, modelado de base de datos con MySQL y diseño de frontend y backend con HTML, CSS, JavaScript y PHP.',
+  },
+  {
+    date: 'Enero 2021 - Junio 2021',
+    title: 'Fullstack Developer | Docmovi',
+    description:
+      'Desarrollo de servicio de pago con WebPay, sistema para gestión de usuarios con cobros automáticos, modelado de base de datos con MySQL y diseño de frontend y backend con HTML, CSS, JavaScript y PHP.',
+  },
+  {
+    date: 'Marzo 2021 - Julio 2021',
+    title:
+      'Fullstack Developer | Museo de Historia Natural E Histórico de San Antonio',
+    description:
+      'Desarrollo de aplicación web para la gestión de piezas históricas del museo. Modelado de base de datos con MySQL. Diseño de frontend y backend con HTML, CSS, JavaScript y PHP.',
+  },
+  {
+    date: 'Marzo 2022 - Octubre 2022',
+    title: 'Ingeniero de Software | Consorcio Progresa SPA',
+    description:
+      'Mantenimiento de endpoints. Diseño de correos electrónicos vía SendGrid. Desarrollo de bot de Discord para la gestión de repositorios y envío de mensajes usando API de Github y Telegram.',
+  },
+]
+---
+
+<div class='grid lg:grid-cols-5 grid-cols-1 gap-10'>
+  <Timeline items={items} />
+  <div
+    class='w-fit grid lg:col-span-2 col-span-1 items-center justify-self-center'>
+    <Collage />
+  </div>
+</div>

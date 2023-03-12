@@ -1,0 +1,25 @@
+---
+import Socials from '@components/Socials.astro'
+---
+
+<footer
+  class='h-40 grid grid-cols-3 lg:grid-rows-3 grid-rows-2 place-items-center bg-light-navy p-6'>
+  <div
+    class='grid grid-flow-col col-start-2 lg:row-start-2 row-start-1'>
+    <Socials />
+  </div>
+  <div
+    class='w-full lg:grid grid-flow-col lg:row-start-3 row-start-2 col-span-3 lg:justify-between lg:text-sm text-xs'>
+    <p class='lg:text-start text-center'>
+      Ariel Salgado @ 2023
+    </p>
+    <p class='lg:text-end text-center'>
+      Powered by <a
+        href='https://astro.build/'
+        target='_blank'
+        class='hover:text-primary transition-colors duration-300'
+        >Astro</a
+      >.
+    </p>
+  </div>
+</footer>

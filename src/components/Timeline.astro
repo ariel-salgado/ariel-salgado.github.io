@@ -1,0 +1,31 @@
+---
+interface Props {
+  items: Array<{
+    date: string
+    title: string
+    description: string
+  }>
+}
+
+const { items } = Astro.props
+---
+
+<ul
+  class='relative lg:col-span-3 col-span-1 border-l border-dark-slate'>
+  {
+    items.map(({ date, title, description }) => (
+      <li class='ml-4 lg:mb-10 mb-6'>
+        <div class='lg:w-3 w-2 lg:h-3 h-2 absolute lg:-left-1.5 -left-[5px] lg:mt-1.5 mt-2 rounded-full bg-dark-slate' />
+        <time class='lg:text-sm text-xs leading-none text-primary'>
+          {date}
+        </time>
+        <h1 class='lg:text-base text-sm font-semibold'>
+          {title}
+        </h1>
+        <p class='text-slate lg:text-base text-sm'>
+          {description}
+        </p>
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,65 @@
+---
+import Socials from '@components/Socials.astro'
+
+interface Props {
+  links: Array<{ url: string; text: string }>
+}
+
+const { links } = Astro.props
+---
+
+<aside
+  id='menu'
+  class='w-full h-screen hidden fixed top-0 left-0 z-50'>
+  <div
+    class='w-full max-w-md h-full flex flex-col shrink grow-0 bg-navy shadow'>
+    <div
+      class='h-16 flex justify-between items-center sm:px-12 px-6 border-b border-lightest-navy'>
+      <button
+        type='button'
+        aria-label='Menu'
+        class='close-menu'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          class='inline-block align-middle w-6 h-6'>
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M6 18L18 6M6 6l12 12'></path>
+        </svg>
+      </button>
+      <h2 class='text-3xl text-center text-primary'>
+        <a href='/'>&lt;/&gt;</a>
+      </h2>
+      <span></span>
+    </div>
+    <div
+      class='h-full flex flex-col justify-between sm:px-12 sm:py-4 px-6 py-2'>
+      <ul>
+        <h4 class='text-primary text-lg font-medium py-4'>
+          Navegación
+        </h4>
+        {
+          links.map(({ url, text }) => (
+            <li class='close-menu hover:bg-light-navy border-l-2 border-lightest-navy hover:border-primary hover:font-bold hover:text-primary transition-colors'>
+              <a
+                class='w-full block font-mono pl-4 py-2 '
+                href={url}>
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class='py-4'>
+        <Socials />
+      </div>
+    </div>
+  </div>
+  <button
+    class='close-menu w-full h-full shrink-0 grow basis-0 bg-dark-navy/70'
+  ></button>
+</aside>

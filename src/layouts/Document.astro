@@ -1,0 +1,79 @@
+---
+export interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='es-CL'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <meta name='description' content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    /* primary */
+    --primary-hue: 15;
+    --primary: var(--primary-hue) 60% 60%;
+
+    /* background */
+    --navy: 10 25 47;
+    --dark-navy: 2 12 27;
+    --light-navy: 17 34 64;
+    --lightest-navy: 35 53 84;
+
+    /* text */
+    --slate: 148 163 184;
+    --light-slate: 203 213 225;
+    --dark-slate: 71 85 105;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    background-color: rgb(var(--navy));
+    color: rgb(var(--light-slate));
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--navy));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100dvh;
+    border: 3px solid rgb(var(--navy));
+    background: rgb(var(--dark-slate));
+  }
+</style>

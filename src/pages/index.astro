@@ -1,0 +1,44 @@
+---
+import Document from '@layouts/Document.astro'
+import Header from '@components/Header.astro'
+import Section from '@layouts/Section.astro'
+
+import Inicio from '@components/articles/Inicio.astro'
+import Acerca from '@components/articles/Acerca.astro'
+import Footer from '@components/Footer.astro'
+import Experiencia from '@components/articles/Experiencia.astro'
+import Contacto from '@components/articles/Contacto.astro'
+---
+
+<Document
+  title='Ariel Salgado | Portafolio'
+  description='Soy estudiante de Ingeniería Civil en Informática. Me considero una persona apasionada por la tecnología y la programación. Actualmente me encuentro abierto a nuevas oportunidades laborales que me permitan seguir desarrollandome profesionalmente.'>
+  <!-- Header -->
+  <Header />
+
+  <!-- Main content -->
+  <main class='2xl:px-64 xl:px-36 lg:px-24 sm:px-12 px-6'>
+    <!-- Inicio -->
+    <Section id='inicio'>
+      <Inicio />
+    </Section>
+
+    <!-- Acerca -->
+    <Section id='acerca' title='¿Quién soy?'>
+      <Acerca />
+    </Section>
+
+    <!-- Experiencia -->
+    <Section id='experiencia' title='Experiencia'>
+      <Experiencia />
+    </Section>
+
+    <!-- Contacto -->
+    <Section id='contacto'>
+      <Contacto />
+    </Section>
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+</Document>

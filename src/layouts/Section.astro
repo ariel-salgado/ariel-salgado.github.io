@@ -1,0 +1,19 @@
+---
+import SectionTitle from '@components/SectionTitle.astro'
+
+interface Props {
+  id: string
+  title?: string
+}
+
+const { id, title } = Astro.props
+---
+
+<section
+  id={id}
+  class={`w-full min-h-screen grid auto-rows-min content-center lg:gap-10 gap-6 lg:-mt-20 -mt-16 ${
+    title ? 'lg:py-28 py-24' : 'lg:py-40 py-32'
+  }`}>
+  {title && <SectionTitle>{title}</SectionTitle>}
+  <slot />
+</section>

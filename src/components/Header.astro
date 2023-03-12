@@ -1,0 +1,74 @@
+---
+import Sidebar from '@components/Sidebar.astro'
+
+const links: Array<{ url: string; text: string }> = [
+  { url: '#inicio', text: 'inicio' },
+  { url: '#acerca', text: 'acerca' },
+  { url: '#experiencia', text: 'experiencia' },
+  { url: '#contacto', text: 'contacto' },
+]
+---
+
+<script>
+  const menu = document.querySelector('#menu')
+  const openButtons =
+    document.querySelectorAll('.open-menu')
+  const closeButtons =
+    document.querySelectorAll('.close-menu')
+
+  openButtons.forEach(button => {
+    button?.addEventListener('click', () => {
+      console.log('show')
+      menu?.classList.add('flex')
+      menu?.classList.remove('hidden')
+    })
+  })
+
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      console.log('hide')
+      menu?.classList.add('hidden')
+      menu?.classList.remove('flex')
+    })
+  })
+</script>
+
+<header
+  class='w-full sticky top-0 bg-light-navy lg:shadow-none shadow transition-all duration-300 z-50'>
+  <nav
+    class='relative lg:h-20 h-16 flex lg:flex-row flex-row-reverse justify-between items-center 2xl:px-64 xl:px-36 lg:px-24 sm:px-12 px-6'>
+    <h2>
+      <a href='/' class='lg:text-5xl text-3xl text-primary'
+        >&lt;/&gt;</a
+      >
+    </h2>
+    <button
+      class='open-menu w-min lg:hidden'
+      type='button'
+      aria-label='Menu'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 24 24'
+        stroke-width='2'
+        stroke='currentColor'
+        class='inline-block align-middle w-6 h-6'>
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5'
+        ></path>
+      </svg>
+    </button>
+    <ul class='lg:flex hidden gap-8'>
+      {
+        links.map(({ url, text }) => (
+          <li class='text-sm hover:text-primary font-mono transition-colors duration-300'>
+            <a href={url}>{text}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<Sidebar links={links} />

@@ -11,12 +11,12 @@
 	const { class: className, children, ...props }: Props = $props();
 </script>
 
-<h2
+<h3
 	class={cn(
-		'mb-2 flex whitespace-nowrap text-3xl font-bold text-clr-text-secondary after:relative after:top-5 after:ml-4 after:block after:h-px after:w-full after:bg-clr-text-primary md:text-4xl md:after:top-6 lg:text-5xl lg:after:top-7',
+		'text-text-secondary mt-4 text-2xl font-bold md:text-3xl xl:mt-0 xl:text-4xl',
 		className
 	)}
 	{...props}
 >
 	{@render children()}
-</h2>
+</h3>

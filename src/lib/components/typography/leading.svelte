@@ -12,7 +12,7 @@
 </script>
 
 <p
-	class={cn('font-mono text-xs text-clr-accent-primary md:text-sm lg:text-base', className)}
+	class={cn('text-accent-primary font-mono text-xs md:text-sm lg:text-base', className)}
 	{...props}
 >
 	{@render children()}

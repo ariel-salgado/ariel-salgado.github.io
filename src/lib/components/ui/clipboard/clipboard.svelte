@@ -25,6 +25,6 @@
 	{#if !copied}
 		<ClipboardIcon />
 	{:else}
-		<CheckedClipboardIcon class="stroke-clr-accent-primary" />
+		<CheckedClipboardIcon class="stroke-accent-primary" />
 	{/if}
 </button>

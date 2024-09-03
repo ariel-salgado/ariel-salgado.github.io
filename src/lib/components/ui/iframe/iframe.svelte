@@ -13,7 +13,7 @@
 
 <div
 	class={cn(
-		'h-min w-full max-w-sm rounded-2xl border-2 border-clr-accent-primary p-2 *:rounded-xl *:brightness-90 *:grayscale *:transition-all *:duration-500 *:hover:grayscale-0',
+		'border-accent-primary h-min w-full max-w-sm rounded-2xl border-2 p-2 *:rounded-xl *:brightness-90 *:grayscale *:transition-all *:duration-500 *:hover:grayscale-0',
 		className
 	)}
 	{...props}

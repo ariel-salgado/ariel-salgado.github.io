@@ -8,17 +8,26 @@
 	import CV from '$lib/assets/docs/Ariel_Salgado_CV.pdf';
 </script>
 
+<svelte:head>
+	<title>Ariel Salgado | Portfolio</title>
+	<meta
+		name="description"
+		content="Estudiante tesista de Ingeniería Civil en Informática. Abierto a oportunidades laborales que me permitan seguir desarrollandome profesionalmente."
+	/>
+</svelte:head>
+
 <!-- Inicio -->
 <Section id="inicio">
 	<Leading>Hola!, mi nombre es:</Leading>
 	<Title>
-		<span class="block text-clr-text-secondary">Ariel Salgado.</span>
+		<span class="text-text-secondary block">Ariel Salgado.</span>
 		Ingeniero Civil Informático.
 	</Title>
 
 	<div class="space-y-4 *:max-w-xl *:text-pretty *:leading-relaxed">
 		<p>
-			Soy estudiante tesista con experiencia en desarrollo de aplicaciones web y servicios backend.
+			Soy ingeniero civil informático con experiencia en desarrollo de aplicaciones web y servicios
+			backend.
 		</p>
 		<p>
 			Abierto a nuevas oportunidades para poner en práctica mis habilidades y conocimientos en
@@ -36,8 +45,8 @@
 	<div class="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-8 xl:gap-x-12">
 		<div class="mb-4 space-y-4 *:text-pretty *:leading-relaxed lg:col-span-3">
 			<p>
-				Soy estudiante en la Universidad de Valparaíso. Actualmente terminando mi tesis de grado
-				para optar al título de Ingeniero Civil Informático.
+				Soy Ingeniero Civil Informático titulado de la Universidad de Valparaíso. Actualmente
+				buscando nuevas oportunidades de trabajo.
 			</p>
 			<p>
 				Durante mi carrera he trabajado en proyectos de desarrollo de software, tanto en el ámbito
@@ -82,7 +91,7 @@
 		<Timeline class="col-span-3" events={experience} />
 
 		<div
-			class="flex flex-col gap-y-4 rounded-xl bg-clr-bg-secondary p-6 shadow-lg shadow-slate-950 md:gap-y-6 xl:col-span-2 xl:p-12"
+			class="bg-bg-secondary flex flex-col gap-y-4 rounded-xl p-6 shadow-lg shadow-slate-950 md:gap-y-6 xl:col-span-2 xl:p-12"
 		>
 			<Leading>Último proyecto</Leading>
 			<Subtitle>Trabajo de título</Subtitle>
@@ -108,7 +117,7 @@
 				>Ir al sitio</Button
 			>
 
-			<span class="my-6 h-px w-full bg-clr-text-primary xl:my-10" />
+			<span class="bg-text-primary my-6 h-px w-full xl:my-10"></span>
 
 			<Leading>Proyectos anteriores</Leading>
 			<Subtitle>FFT Comparison</Subtitle>
@@ -135,7 +144,7 @@
 <Section id="contacto">
 	<Leading>Contáctame y hablemos.</Leading>
 	<Title>
-		<span class="block text-clr-text-secondary">Escribeme,</span>
+		<span class="text-text-secondary block">Escribeme,</span>
 		conversemos, conectémonos.
 	</Title>
 
@@ -146,9 +155,9 @@
 
 	<Subtitle>Correo Electrónico</Subtitle>
 	<div
-		class="inline-flex w-full items-center justify-between gap-x-1 rounded border-2 border-clr-accent-primary px-3 py-2 md:px-4 md:py-2.5 md:text-lg xl:px-5 xl:py-3 xl:text-xl"
+		class="border-accent-primary inline-flex w-full items-center justify-between gap-x-1 rounded border-2 py-2 px-3 md:py-2.5 md:px-4 md:text-lg xl:py-3 xl:px-5 xl:text-xl"
 	>
-		<span class="text-clr-text-secondary">{EMAIL}</span>
+		<span class="text-text-secondary">{EMAIL}</span>
 		<Clipboard text={EMAIL} />
 	</div>
 

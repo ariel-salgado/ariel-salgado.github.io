@@ -25,11 +25,11 @@
 <button onclick={toggleTheme} aria-label="Theme toggle">
 	{#if theme === 'dark'}
 		<SunIcon
-			class="ml-1 transition-colors focus-within:stroke-clr-accent-primary hover:stroke-clr-accent-primary xl:size-7"
+			class="focus-within:stroke-accent-primary hover:stroke-accent-primary ml-1 transition-colors xl:size-7"
 		/>
 	{:else}
 		<MoonIcon
-			class="ml-1 transition-colors focus-within:stroke-clr-accent-primary hover:stroke-clr-accent-primary xl:size-7"
+			class="focus-within:stroke-accent-primary hover:stroke-accent-primary ml-1 transition-colors xl:size-7"
 		/>
 	{/if}
 </button>

@@ -27,18 +27,18 @@
 <svelte:body bind:this={body} />
 
 <header
-	class="fixed top-0 z-50 flex h-14 w-full items-center justify-between bg-clr-bg-secondary px-8 shadow md:px-12 lg:h-16 xl:px-36"
+	class="bg-bg-secondary fixed top-0 z-50 flex h-14 w-full items-center justify-between px-8 shadow md:px-12 lg:h-16 xl:px-36"
 >
 	<!-- Logo -->
-	<span class="font-mono text-2xl italic text-clr-accent-primary lg:text-3xl">
+	<span class="text-accent-primary font-mono text-2xl italic lg:text-3xl">
 		<a href="/"> &lt;/&gt;</a>
 	</span>
 
 	<button class="block lg:hidden" aria-label="Toggle menu" onclick={toggleMenu}>
 		{#if menuIsOpen}
-			<CloseMenuIcon class="size-6 fill-clr-text-primary" aria-label="Close menu" />
+			<CloseMenuIcon class="fill-text-primary size-6" aria-label="Close menu" />
 		{:else}
-			<OpenMenuIcon class="size-6 fill-clr-text-primary" aria-label="Open menu" />
+			<OpenMenuIcon class="fill-text-primary size-6" aria-label="Open menu" />
 		{/if}
 	</button>
 
@@ -47,7 +47,7 @@
 			<li class="xl:text-lg">
 				<a
 					{href}
-					class="p-1 font-mono text-clr-text-primary transition-colors focus-within:text-clr-accent-primary hover:text-clr-accent-primary"
+					class="text-text-primary focus-within:text-accent-primary hover:text-accent-primary p-1 font-mono transition-colors"
 				>
 					{name}
 				</a>

@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+/* :root[data-theme='light'] {
+	--main-hue: 216deg;
+	--accent-hue: 15deg;
+	--bg-primary: var(--main-hue) 0% 95%;
+	--bg-secondary: var(--main-hue) 0% 95%;
+	--text-primary: var(--main-hue) 47% 11%;
+	--text-secondary: var(--main-hue) 25% 27%;
+	--accent-primary: var(--accent-hue) 91% 68%;
+	--accent-secondary: var(--accent-hue) 27% 36%;
+}  */
+
+@theme {
+	--hue: 257;
+	--accent: 38;
+
+	--color-bg-primary: oklch(21% 0.048 var(--hue));
+	--color-bg-secondary: oklch(26.12% 0.06 var(--hue));
+	--color-text-primary: oklch(75.07% 0.03 var(--hue));
+	--color-text-secondary: oklch(92.57% 0.013 var(--hue));
+
+	--color-accent-primary: oklch(74.21% 0.146 var(--accent));
+	--color-accent-secondary: oklch(46.61% 0.055 var(--accent));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:has(:target) {
+		scroll-behavior: smooth;
+	}
+}
+
+html {
+	color-scheme: dark light;
+	text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: hsl(var(--bg-primary));
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 100vh;
+	border: 3px solid hsl(var(--bg-primary));
+	background: hsl(var(--text-primary));
+}

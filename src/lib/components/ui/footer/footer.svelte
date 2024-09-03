@@ -12,7 +12,7 @@
 
 <footer
 	class={cn(
-		'grid h-40 grid-cols-3 grid-rows-2 place-items-center bg-clr-bg-secondary px-8 py-8 shadow md:h-44 md:px-12 xl:h-56 xl:px-36 xl:py-12',
+		'bg-bg-secondary grid h-40 grid-cols-3 grid-rows-2 place-items-center py-8 px-8 shadow md:h-44 md:px-12 xl:h-56 xl:py-12 xl:px-36',
 		className
 	)}
 	{...props}
@@ -20,12 +20,12 @@
 	<div class="col-start-2 inline-flex items-center justify-center gap-x-2">
 		<a href={GITHUB_URL} target="_blank" aria-label="Github">
 			<GithubIcon
-				class="inline-block size-9 fill-clr-text-primary align-middle transition-colors focus-within:fill-clr-accent-primary hover:fill-clr-accent-primary md:size-10"
+				class="fill-text-primary focus-within:fill-accent-primary hover:fill-accent-primary inline-block size-9 align-middle transition-colors md:size-10"
 			/>
 		</a>
 		<a href={LINKEDIN_URL} target="_blank" aria-label="Linkedin">
 			<LinkedinIcon
-				class="inline-block size-9 fill-clr-text-primary align-middle transition-colors focus-within:fill-clr-accent-primary hover:fill-clr-accent-primary md:size-10"
+				class="fill-text-primary focus-within:fill-accent-primary hover:fill-accent-primary inline-block size-9 align-middle transition-colors md:size-10"
 			/>
 		</a>
 	</div>
@@ -38,7 +38,7 @@
 			Powered by <a
 				href="https://svelte.dev/"
 				target="_blank"
-				class="transition-colors focus-within:text-clr-accent-primary hover:text-clr-accent-primary"
+				class="focus-within:text-accent-primary hover:text-accent-primary transition-colors"
 				>Svelte</a
 			>.
 		</p>

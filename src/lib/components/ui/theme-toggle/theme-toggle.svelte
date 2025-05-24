@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import { MoonIcon, SunIcon } from '$lib/components/icons';
 
 	let theme: 'dark' | 'light' | undefined = $state();
@@ -8,7 +8,8 @@
 
 		if (savedTheme) {
 			theme = savedTheme as 'dark' | 'light';
-		} else {
+		}
+		else {
 			theme = (document.documentElement.dataset.theme as 'dark' | 'light') || 'dark';
 		}
 
@@ -22,14 +23,14 @@
 	};
 </script>
 
-<button onclick={toggleTheme} aria-label="Theme toggle">
+<button onclick={toggleTheme} aria-label='Theme toggle'>
 	{#if theme === 'dark'}
 		<SunIcon
-			class="focus-within:stroke-accent-primary hover:stroke-accent-primary ml-1 transition-colors xl:size-7"
+			class='focus-within:stroke-accent-primary hover:stroke-accent-primary ml-1 transition-colors xl:size-7'
 		/>
 	{:else}
 		<MoonIcon
-			class="focus-within:stroke-accent-primary hover:stroke-accent-primary ml-1 transition-colors xl:size-7"
+			class='focus-within:stroke-accent-primary hover:stroke-accent-primary ml-1 transition-colors xl:size-7'
 		/>
 	{/if}
 </button>

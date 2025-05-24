@@ -1,39 +1,64 @@
-import js from '@eslint/js';
-import ts from 'typescript-eslint';
-import svelte from 'eslint-plugin-svelte';
-import prettier from 'eslint-config-prettier';
-import globals from 'globals';
+import antfu from '@antfu/eslint-config';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-	js.configs.recommended,
-	...ts.configs.recommended,
-	...svelte.configs['flat/recommended'],
-	prettier,
-	...svelte.configs['flat/prettier'],
+export default antfu(
 	{
-		languageOptions: {
-			globals: {
-				...globals.browser,
-				...globals.node
-			}
-		}
+		type: 'app',
+		svelte: true,
+		typescript: true,
+		stylistic: {
+			indent: 'tab',
+			semi: true,
+			quotes: 'single',
+		},
 	},
 	{
-		files: ['**/*.svelte'],
-		languageOptions: {
-			parserOptions: {
-				parser: ts.parser
-			}
-		}
-	},
-	{
-		ignores: ['build/', '.svelte-kit/', 'dist/']
+		ignores: ['node_modules/', 'build/', '.svelte-kit/'],
 	},
 	{
 		rules: {
-			'no-undef': 'off',
-			'@typescript-eslint/no-explicit-any': 'off'
-		}
-	}
-];
+			'new-cap': ['off'],
+			'no-unused-expressions': ['off'],
+			'ts/no-explicit-any': ['off'],
+			'ts/no-empty-object-type': ['off'],
+			'ts/consistent-type-definitions': ['off'],
+			'ts/method-signature-style': ['off'],
+			'ts/no-unused-expressions': ['off'],
+			'antfu/no-top-level-await': ['off'],
+			'node/prefer-global/process': ['off'],
+			'node/no-process-env': ['error'],
+			'perfectionist/sort-imports': [
+				'error',
+				{
+					tsconfigRootDir: '.',
+					groups: [
+						'type',
+						['builtin', 'external'],
+					],
+				},
+			],
+			'unicorn/no-new-array': ['off'],
+			'unicorn/filename-case': [
+				'error',
+				{
+					case: 'kebabCase',
+					ignore: ['README.md'],
+				},
+			],
+			'no-unused-vars': ['off'],
+			'ts/no-unused-vars': [
+				'error',
+				{
+					args: 'after-used',
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_',
+				},
+			],
+			'no-console': [
+				'error',
+				{
+					allow: ['info', 'clear', 'error', 'warn'],
+				},
+			],
+		},
+	},
+);

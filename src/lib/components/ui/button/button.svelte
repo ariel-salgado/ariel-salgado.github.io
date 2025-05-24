@@ -1,25 +1,25 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { Snippet } from 'svelte';
 	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
 	import { cn } from '$lib/utils';
 
 	type ButtonOrLinkProps =
-		| (HTMLButtonAttributes & { as?: 'button' })
-		| (HTMLAnchorAttributes & { as: 'a' });
+		| (HTMLButtonAttributes & { href?: never })
+		| (HTMLAnchorAttributes & { href: string });
 
 	type Props = {
 		children: Snippet;
 	} & ButtonOrLinkProps;
 
-	let { children, class: className, ...props }: Props = $props();
+	const { children, class: className, ...props }: Props = $props();
 </script>
 
-{#if props.as === 'a'}
+{#if 'href' in props && props.href !== undefined && props.href !== null}
 	<a
 		class={cn(
 			'border-accent-primary bg-accent-secondary text-text-secondary focus-within:bg-accent-primary/70 focus-within:text-text-secondary hover:bg-accent-primary/70 hover:text-text-secondary inline-flex w-fit rounded-md border-2 py-2 px-4 font-mono text-sm font-medium transition-colors md:py-2.5 md:px-5 md:text-base xl:text-lg',
-			className
+			className,
 		)}
 		{...props}
 	>
@@ -27,10 +27,10 @@
 	</a>
 {:else}
 	<button
-		type="button"
+		type='button'
 		class={cn(
 			'border-accent-primary bg-accent-secondary text-text-secondary focus-within:bg-accent-primary/70 focus-within:text-text-secondary hover:bg-accent-primary/70 hover:text-text-secondary inline-flex w-fit rounded-md border-2 py-2 px-4 font-mono text-sm font-medium transition-colors md:py-2.5 md:px-5 md:text-base xl:text-lg',
-			className
+			className,
 		)}
 		{...props}
 	>

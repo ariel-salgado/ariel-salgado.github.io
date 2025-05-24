@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
 	import { CheckedClipboardIcon, ClipboardIcon } from '$lib/components/icons';
@@ -7,7 +7,7 @@
 		text: string;
 	}
 
-	let { text, ...props }: Props = $props();
+	const { text, ...props }: Props = $props();
 
 	let copied: boolean = $state(false);
 
@@ -21,10 +21,10 @@
 	};
 </script>
 
-<button type="button" onclick={copyToClipboard} aria-label="Copy to clipboard" {...props}>
+<button type='button' onclick={copyToClipboard} aria-label='Copy to clipboard' {...props}>
 	{#if !copied}
 		<ClipboardIcon />
 	{:else}
-		<CheckedClipboardIcon class="stroke-accent-primary" />
+		<CheckedClipboardIcon class='stroke-accent-primary' />
 	{/if}
 </button>

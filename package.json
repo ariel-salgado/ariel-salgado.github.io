@@ -1,48 +1,38 @@
 {
 	"name": "svelte-portfolio",
+	"type": "module",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"npm": "please-use-pnpm",
+		"yarn": "please-use-pnpm",
+		"pnpm": ">=10.0.0",
+		"node": ">=18.13.0"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.4",
-		"@sveltejs/enhanced-img": "^0.3.4",
-		"@sveltejs/kit": "^2.5.25",
-		"@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
-		"@tailwindcss/vite": "4.0.0-alpha.20",
-		"@types/eslint": "^9.6.1",
-		"@typescript-eslint/eslint-plugin": "^8.4.0",
-		"@typescript-eslint/parser": "^8.4.0",
-		"autoprefixer": "^10.4.20",
+		"@antfu/eslint-config": "^4.13.2",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/enhanced-img": "^0.6.0",
+		"@sveltejs/kit": "^2.21.1",
+		"@sveltejs/vite-plugin-svelte": "5.0.3",
+		"@tailwindcss/vite": "4.1.7",
 		"clsx": "^2.1.1",
-		"eslint": "^9.9.1",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "2.43.0",
-		"postcss": "^8.4.44",
-		"postcss-load-config": "^6.0.1",
-		"prettier": "^3.3.3",
-		"prettier-plugin-svelte": "^3.2.6",
-		"prettier-plugin-tailwindcss": "^0.6.6",
-		"svelte": "5.0.0-next.243",
-		"svelte-check": "^4.0.0",
-		"tailwind-merge": "^2.5.2",
-		"tailwindcss": "4.0.0-alpha.21",
-		"tslib": "^2.7.0",
-		"typescript": "^5.5.4",
-		"vite": "^5.4.2"
-	},
-	"engines": {
-		"npm": "please-use-pnpm",
-		"yarn": "please-use-pnpm",
-		"pnpm": ">=9.0.0",
-		"node": ">=18.13.0"
-	},
-	"type": "module"
+		"eslint": "^9.27.0",
+		"eslint-plugin-svelte": "3.9.0",
+		"svelte": "5.33.1",
+		"svelte-check": "^4.2.1",
+		"tailwind-merge": "^3.3.0",
+		"tailwindcss": "4.1.7",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
+	}
 }

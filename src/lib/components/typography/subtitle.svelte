@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang='ts'>
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 
@@ -14,7 +14,7 @@
 <h3
 	class={cn(
 		'text-text-secondary mt-4 text-2xl font-bold md:text-3xl xl:mt-0 xl:text-4xl',
-		className
+		className,
 	)}
 	{...props}
 >

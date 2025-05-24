@@ -1,19 +1,19 @@
-import Sun from './sun.svelte';
-import Moon from './moon.svelte';
-import Github from './github.svelte';
-import Linkedin from './linkedin.svelte';
-import OpenMenu from './open-menu.svelte';
+import CheckedClipboard from './checked-clipboard.svelte';
 import Clipboard from './clipboard.svelte';
 import CloseMenu from './close-menu.svelte';
-import CheckedClipboard from './checked-clipboard.svelte';
+import Github from './github.svelte';
+import Linkedin from './linkedin.svelte';
+import Moon from './moon.svelte';
+import OpenMenu from './open-menu.svelte';
+import Sun from './sun.svelte';
 
 export {
-	Sun as SunIcon,
-	Moon as MoonIcon,
+	CheckedClipboard as CheckedClipboardIcon,
+	Clipboard as ClipboardIcon,
+	CloseMenu as CloseMenuIcon,
 	Github as GithubIcon,
 	Linkedin as LinkedinIcon,
+	Moon as MoonIcon,
 	OpenMenu as OpenMenuIcon,
-	CloseMenu as CloseMenuIcon,
-	Clipboard as ClipboardIcon,
-	CheckedClipboard as CheckedClipboardIcon
+	Sun as SunIcon,
 };

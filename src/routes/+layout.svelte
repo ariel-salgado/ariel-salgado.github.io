@@ -1,30 +1,36 @@
 <script lang='ts'>
+	import type { Snippet } from 'svelte';
+
 	import '../app.css';
 
+	import { Particles } from '$lib/components';
 	import { onNavigate } from '$app/navigation';
-	import { Footer, Header } from '$lib/components/ui';
 
-	const { children } = $props();
+	interface Props {
+		children: Snippet;
+	}
 
-	onNavigate(({ complete }) => {
-		if (!document.startViewTransition)
+	const { children }: Props = $props();
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) {
 			return;
+		}
 
 		return new Promise((resolve) => {
 			document.startViewTransition(async () => {
 				resolve();
-				await complete;
+				await navigation.complete;
 			});
 		});
 	});
 </script>
 
-<div class='text-text-primary bg-bg-primary grid grid-rows-[auto_1fr_auto] text-sm md:text-base xl:text-lg'>
-	<Header />
+<div class='relative size-full h-screen overflow-hidden bg-gradient-to-t from-background to-black'>
+	<div class='absolute inset-0 isolate z-0 mystic-mist opacity-40'></div>
+	<Particles class='absolute isolate z-0' />
 
-	<main class='min-h-screen px-8 md:px-12 xl:px-36'>
+	<main class='isolate z-10 size-full'>
 		{@render children()}
 	</main>
-
-	<Footer />
 </div>

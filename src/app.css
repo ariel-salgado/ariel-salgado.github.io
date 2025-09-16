@@ -1,70 +1,23 @@
 @import 'tailwindcss';
 
-/* :root[data-theme='light'] {
-	--main-hue: 216deg;
-	--accent-hue: 15deg;
-	--bg-primary: var(--main-hue) 0% 95%;
-	--bg-secondary: var(--main-hue) 0% 95%;
-	--text-primary: var(--main-hue) 47% 11%;
-	--text-secondary: var(--main-hue) 25% 27%;
-	--accent-primary: var(--accent-hue) 91% 68%;
-	--accent-secondary: var(--accent-hue) 27% 36%;
-}  */
-
 @theme {
-	--hue: 257;
-	--accent: 38;
-
-	--color-bg-primary: oklch(21% 0.048 var(--hue));
-	--color-bg-secondary: oklch(26.12% 0.06 var(--hue));
-	--color-text-primary: oklch(75.07% 0.03 var(--hue));
-	--color-text-secondary: oklch(92.57% 0.013 var(--hue));
-
-	--color-accent-primary: oklch(74.21% 0.146 var(--accent));
-	--color-accent-secondary: oklch(46.61% 0.055 var(--accent));
+	--color-background: oklch(23.96% 0.0361 243.57);
+	--color-foreground: oklch(89.56% 0.0376 209.09);
+	--color-alt-background: oklch(27.24% 0.0442 237.49);
+	--color-alt-foreground: oklch(89.56% 0.0376 209.09);
+	--color-primary: oklch(77.9% 0.1063 202.91);
+	--color-primary-foreground: oklch(38.73% 0.069 216.54);
+	--color-secondary: oklch(60.3% 0.0961 216.41);
+	--color-secondary-foreground: oklch(23.96% 0.0361 243.57);
+	--color-accent: oklch(87.73% 0.107 79.78);
+	--color-accent-foreground: oklch(23.96% 0.0361 243.57);
+	--color-muted: oklch(38.73% 0.0245 229.79);
+	--color-muted-foreground: oklch(70.64% 0.0268 229.31);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	:has(:target) {
-		scroll-behavior: smooth;
-	}
-}
-
-html {
-	color-scheme: dark light;
-	text-rendering: optimizeLegibility;
-}
-
-html,
-body {
-	height: 100%;
-}
-
-body {
-	font-family:
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		'Segoe UI',
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		'Open Sans',
-		'Helvetica Neue',
-		sans-serif;
-}
-
-::-webkit-scrollbar {
-	width: 12px;
-}
-
-::-webkit-scrollbar-track {
-	background: hsl(var(--bg-primary));
-}
-
-::-webkit-scrollbar-thumb {
-	border-radius: 100vh;
-	border: 3px solid hsl(var(--bg-primary));
-	background: hsl(var(--text-primary));
+@utility mystic-mist {
+	background-image:
+		radial-gradient(circle at 50% 100%, var(--color-secondary) 0%, transparent 60%),
+		radial-gradient(circle at 50% 100%, var(--color-alt-background) 0%, transparent 70%),
+		radial-gradient(circle at 50% 100%, var(--color-background) 0%, transparent 80%);
 }

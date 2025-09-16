@@ -1,17 +1,20 @@
-/// <reference types="@sveltejs/kit" />
 /// <reference no-default-lib="true"/>
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
+/// <reference types="@sveltejs/kit" />
 
 import { build, files, version } from '$service-worker';
 
-const sw = globalThis.self as unknown as ServiceWorkerGlobalScope;
+const self = globalThis.self as unknown as ServiceWorkerGlobalScope;
 
 const CACHE = `cache-${version}`;
 
-const ASSETS = [...build, ...files];
+const ASSETS = [
+	...build,
+	...files,
+];
 
-sw.addEventListener('install', (event) => {
+self.addEventListener('install', (event) => {
 	async function add_files_to_cache() {
 		const cache = await caches.open(CACHE);
 		await cache.addAll(ASSETS);
@@ -20,7 +23,7 @@ sw.addEventListener('install', (event) => {
 	event.waitUntil(add_files_to_cache());
 });
 
-sw.addEventListener('activate', (event) => {
+self.addEventListener('activate', (event) => {
 	async function delete_old_caches() {
 		for (const key of await caches.keys()) {
 			if (key !== CACHE)
@@ -31,7 +34,7 @@ sw.addEventListener('activate', (event) => {
 	event.waitUntil(delete_old_caches());
 });
 
-sw.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
 	if (event.request.method !== 'GET')
 		return;
 

@@ -1,134 +1,174 @@
-<script lang="ts">
-  import CV from "$lib/assets/docs/ariel-salgado-cv.pdf";
-  import {
-    Leading,
-    SidelineTitle,
-    Subtitle,
-    Title,
-  } from "$lib/components/typography";
-  import {
-    Button,
-    Clipboard,
-    IFrame,
-    Section,
-    Timeline,
-  } from "$lib/components/ui";
-  import { experience } from "$lib/components/ui/timeline";
-  import { EMAIL } from "$lib/config";
+<script lang='ts'>
+	import InfoIcon from 'phosphor-svelte/lib/Info';
+	import FolderIcon from 'phosphor-svelte/lib/Folder';
+	import QuestionIcon from 'phosphor-svelte/lib/Question';
+	import EnvelopeIcon from 'phosphor-svelte/lib/Envelope';
+	import RedOceanDemo from '$lib/assets/videos/redocean.mp4';
+	import ProfilePicture from '$lib/assets/images/profile.jpg?enhanced';
+
+	import { Window, FloatingWindow, Link, Accordion, Badge } from '$lib/components';
+
+	let open_faq = $state<boolean>(false);
+	let open_info = $state<boolean>(false);
+	let open_works = $state<boolean>(false);
+	let open_contact = $state<boolean>(false);
 </script>
 
-<svelte:head>
-  <title>Ariel Salgado | Portfolio</title>
-  <meta
-    name="description"
-    content="Estudiante tesista de Ingeniería Civil en Informática. Abierto a oportunidades laborales que me permitan seguir desarrollandome profesionalmente."
-  />
-</svelte:head>
+<div class='grid size-full place-items-center items-center'>
+	<Window>
+		{#snippet header()}
+			<span class='text-xl font-medium text-foreground'>inicio</span>
+		{/snippet}
+		{#snippet content()}
+			<div class='grid size-full grid-rows-[1fr_auto] items-center'>
+				<hgroup class='text-center'>
+					<h1 class='text-6xl leading-relaxed'>hola! <span class='font-medium'>soy ariel</span></h1>
+					<p class='text-2xl'>ingeniero civil informático</p>
+				</hgroup>
 
-<!-- Inicio -->
-<Section id="inicio">
-  <Leading>Hola!, mi nombre es:</Leading>
-  <Title>
-    <span class="text-text-secondary block">Ariel Salgado.</span>
-    Ingeniero Civil Informático.
-  </Title>
+				<div class='flex w-full items-center justify-center gap-x-3 p-8'>
+					<button class='cursor-pointer' onclick={() => open_info = !open_info}>
+						<InfoIcon class='inline-block size-18 align-middle' />
+					</button>
 
-  <div class="space-y-4 *:max-w-xl *:text-pretty *:leading-relaxed">
-    <p>
-      Soy ingeniero civil informático con experiencia en desarrollo de
-      aplicaciones web y servicios backend.
-    </p>
-    <p>
-      Abierto a nuevas oportunidades para poner en práctica mis habilidades y
-      conocimientos en proyectos desafiantes y enriquecedores.
-    </p>
-  </div>
+					<button class='cursor-pointer' onclick={() => open_works = !open_works}>
+						<FolderIcon class='inline-block size-18 align-middle' />
+					</button>
 
-  <Button href="#contacto" class="mt-4">Hablemos</Button>
-</Section>
+					<button class='cursor-pointer' onclick={() => open_faq = !open_faq}>
+						<QuestionIcon class='inline-block size-18 align-middle' />
+					</button>
 
-<!-- Acerca -->
-<Section id="acerca">
-  <Leading>Acerca de mi.</Leading>
-  <SidelineTitle>¿Quien soy?</SidelineTitle>
-  <div class="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-8 xl:gap-x-12">
-    <div class="mb-4 space-y-4 *:text-pretty *:leading-relaxed lg:col-span-3">
-      <p>
-        Soy Ingeniero Civil Informático titulado de la Universidad de
-        Valparaíso. Actualmente buscando nuevas oportunidades de trabajo.
-      </p>
-      <p>
-        Durante mi carrera he trabajado en proyectos de desarrollo de software,
-        tanto en el ámbito académico como profesional. Tengo experiencia en el
-        desarrollo de aplicaciones web, servicios backend, modelado de bases de
-        datos y simulaciones.
-      </p>
-      <p>
-        Me ha interesado el desarrollo de software y el análisis de datos. He
-        realizado cursos y certificaciones en el área de data science para
-        complementar mis conocimientos en el área.
-      </p>
-      <p>
-        Me considero una persona responsable, proactiva, resilente y con
-        capacidad de trabajar en equipo. Trato de mantenerme actualizado con las
-        nuevas tecnologías y tendencias.
-      </p>
-      <p>
-        Estoy abierto a nuevas oportunidades, proyectos y colaboraciones. Además
-        de ofertas laborales donde aplicar mis habilidades y conocimientos.
-      </p>
-    </div>
+					<button class='cursor-pointer' onclick={() => open_contact = !open_contact}>
+						<EnvelopeIcon class='inline-block size-18 align-middle' />
+					</button>
+				</div>
+			</div>
+		{/snippet}
+	</Window>
+</div>
 
-    <div
-      class="space-y-8 justify-self-center p-4 text-center lg:col-span-2 lg:p-0"
-    >
-      <IFrame>
-        <enhanced:img
-          src="/static/profile.png?w=365"
-          alt="Ariel Salgado"
-          sizes="365px"
-          class="aspect-square rounded-md object-cover"
-        />
-      </IFrame>
+<FloatingWindow bind:open={open_info}>
+	{#snippet header()}
+		<h2 class='text-xl font-medium text-foreground'>sobre mi</h2>
+	{/snippet}
+	{#snippet content()}
+		<section class='grid grid-rows-[auto_1fr]'>
+			<div class='sticky top-0 flex items-center gap-x-8 border-b border-muted bg-background px-10 py-8'>
+				<div class='aspect-square size-24 rounded-full bg-alt-background'>
+					<enhanced:img class='rounded-full object-contain' alt="Ariel Salgado's profile" src={ProfilePicture} />
+				</div>
+				<hgroup>
+					<h3 class='pb-1 text-3xl text-primary'>Ariel Salgado Acevedo</h3>
+					<p class='text-lg'>Ingeniero Civil Informático</p>
+					<p class='text-lg'>Actualmente CIO en <Link class='text-primary' href='https://redoceanservice.com' target='_blank'>RedOcean</Link></p>
+				</hgroup>
+			</div>
+			<div class='flex flex-col py-2'>
+				<div class='space-y-2 px-10 py-6'>
+					<p>hola! soy ariel, ingeniero civil informático, y yo...</p>
 
-      <Button href={CV} download="ariel-salgado-cv.pdf">Descargar CV</Button>
-    </div>
-  </div>
-</Section>
+					<ul class='list-disc space-y-1 pl-6'>
+						<li>analizo requerimientos de software</li>
+						<li>diseño y modelo bases de datos</li>
+						<li>desarrollo aplicaciones web frontend y backend</li>
+						<li>implemento y consumo APIs</li>
+						<li>despliego aplicaciones en la nube</li>
+					</ul>
+				</div>
+				<div class='px-10 py-6'>
+					<h4 class='text-2xl font-semibold uppercase'>Educación</h4>
+					<ul class='space-y-4 py-4'>
+						<li class='rounded-r-md border-l-4 border-secondary bg-alt-background py-3 pl-6'>
+							<span class='text-xl'>Ingeniería Civil en Informática</span>
+							<p class='text-muted-foreground'>Universidad de Valparaíso (2024)</p>
+						</li>
 
-<!-- Experiencia -->
-<Section id="experiencia">
-  <Leading>Experiencia.</Leading>
-  <SidelineTitle>Mi trayectoria</SidelineTitle>
+						<li class='rounded-r-md border-l-4 border-secondary bg-alt-background py-3 pl-6'>
+							<span class='text-xl'>Licenciado en Ciencias de la Ingeniería</span>
+							<p class='text-muted-foreground'>Universidad de Valparaíso (2024)</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	{/snippet}
+</FloatingWindow>
 
-  <div class="grid grid-cols-1 gap-y-6 xl:grid-cols-2 xl:gap-x-12">
-    <Timeline class="col-span-3" events={experience.toReversed()} />
-  </div>
-</Section>
+<FloatingWindow bind:open={open_works}>
+	{#snippet header()}
+		<h2 class='text-xl font-medium text-foreground'>mis proyectos</h2>
+	{/snippet}
+	{#snippet content()}
+		<section>
+			<div class='px-10 py-6'>
+				<Accordion>
+					{#snippet header()}
+						<hgroup class='w-full'>
+							<h3 class='pb-1 text-2xl font-medium text-primary'>ingeniero de software @ RedOcean</h3>
+							<p class='text-muted-foreground'>octubre 2024 - actualidad</p>
+						</hgroup>
+					{/snippet}
+					{#snippet content()}
+						<div class='space-y-4 pb-8'>
+							<p>
+								desarrollé una plataforma web con un mapa interactivo que permite visualizar el movimiento de partículas a la deriva,
+								impulsadas por corrientes en mar abierto. Su objetivo es ofrecer un pronóstico de hasta 30 días sobre el comportamiento
+								de las corrientes y su impacto en cuerpos como personas, embarcaciones o contaminantes. El modelo predictivo es configurable
+								según las necesidades del usuario, y cuenta con un visualizador temporal que simula el desplazamiento de las partículas.
+							</p>
+							<p>
+								también implementé una API para la autenticación de usuarios y la validación de los datos antes de enviarlos al modelo.
+								esta API almacena la información en una base de datos, lo que permite guardar y reutilizar configuraciones personalizadas
+								en futuras simulaciones.
+							</p>
 
-<!-- Contacto -->
-<Section id="contacto">
-  <Leading>Contáctame y hablemos.</Leading>
-  <Title>
-    <span class="text-text-secondary block">Escribeme,</span>
-    conversemos, conectémonos.
-  </Title>
+						</div>
 
-  <div class="*:text-balance *:leading-relaxed">
-    <p>Estoy abierto a nuevas oportunidades, proyectos y colaboraciones.</p>
-    <p>
-      Si tienes alguna duda, pregunta o quieres trabajar conmigo, puedes
-      contactarme.
-    </p>
-  </div>
+						<div class='overflow-hidden rounded-lg border-2 border-secondary'>
+							<video
+								autoplay
+								controls={false}
+								loop
+								muted
+								oncontextmenu={e => e.preventDefault()}
+								playsinline
+								src={RedOceanDemo}
+							>
+								<track kind='captions' />
+							</video>
+						</div>
 
-  <Subtitle>Correo Electrónico</Subtitle>
-  <div
-    class="border-accent-primary inline-flex w-full items-center justify-between gap-x-1 rounded border-2 py-2 px-3 md:py-2.5 md:px-4 md:text-lg xl:py-3 xl:px-5 xl:text-xl"
-  >
-    <span class="text-text-secondary">{EMAIL}</span>
-    <Clipboard text={EMAIL} />
-  </div>
+						<div class='mt-8 flex flex-wrap gap-2 pb-2'>
+							<Badge>SvelteKit</Badge>
+							<Badge>Vite</Badge>
+							<Badge>TailwindCSS</Badge>
+							<Badge>TypeScript</Badge>
+							<Badge>Zod</Badge>
+							<Badge>MapboxGL</Badge>
+							<Badge>Turf.js</Badge>
+							<Badge>Bun.js</Badge>
+							<Badge>Node.js</Badge>
+							<Badge>Hono.js</Badge>
+							<Badge>Drizzle ORM</Badge>
+							<Badge>SQLite</Badge>
+							<Badge>Open API Specification</Badge>
+							<Badge>Google Cloud</Badge>
+						</div>
+					{/snippet}
+				</Accordion>
+			</div>
+		</section>
+	{/snippet}
+</FloatingWindow>
 
-  <Button href={`mailto:${EMAIL}`} class="mt-4">Contactar</Button>
-</Section>
+<FloatingWindow bind:open={open_contact}>
+	{#snippet header()}
+		<h2 class='text-xl font-medium text-foreground'>contacto</h2>
+	{/snippet}
+	{#snippet content()}
+		<section>
+			henlo
+		</section>
+	{/snippet}
+</FloatingWindow>

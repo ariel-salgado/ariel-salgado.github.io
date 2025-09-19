@@ -4,6 +4,7 @@
 	import QuestionIcon from 'phosphor-svelte/lib/Question';
 	import EnvelopeIcon from 'phosphor-svelte/lib/Envelope';
 	import RedOceanDemo from '$lib/assets/videos/redocean.mp4';
+	import DempsDemo from '$lib/assets/images/demps.jpg?enhanced';
 	import ProfilePicture from '$lib/assets/images/profile.jpg?enhanced';
 
 	import { Window, FloatingWindow, Link, Accordion, Badge } from '$lib/components';
@@ -153,7 +154,55 @@
 							<Badge>Drizzle ORM</Badge>
 							<Badge>SQLite</Badge>
 							<Badge>Open API Specification</Badge>
+							<Badge>Docker</Badge>
 							<Badge>Google Cloud</Badge>
+						</div>
+					{/snippet}
+				</Accordion>
+				<Accordion>
+					{#snippet header()}
+						<hgroup class='w-full'>
+							<h3 class='pb-1 text-2xl font-medium text-primary'>proyecto de tesis @ Universidad de Valparaíso</h3>
+							<p class='text-muted-foreground'>julio 2023 - agosto 2024</p>
+						</hgroup>
+					{/snippet}
+					{#snippet content()}
+						<div class='space-y-4 pb-8'>
+							<p>
+								Para optar al título de Ingeniero Civil Informático, desarrollé un proyecto de tesis cuyo objetivo
+								fue diseñar e implementar una aplicación web
+								para la creación y mantención de planes de
+								evacuación en zonas costeras.
+							</p>
+
+							<p> La plataforma permitía cargar una carta inundación en formato GeoJSON, la cual podía ser
+								visualizada y editada mediante un mapa interactivo o a través de un editor de código
+								integrado. Una vez definidas las zonas inundables, se procedía a establecer las zonas
+								pobladas y las posibles rutas de evacuación a evaluar. Además, era necesario configurar
+								un modelo de simulación, especificando parámetros relevantes y el comportamiento
+								esperado de las personas durante la evacuación. Finalmente, al iniciar la simulación, en
+								un tiempo aproximado de cinco segundos se podía observar en tiempo real cómo los
+								individuos evacuaban hacia zonas seguras mientras el tsunami avanzaba. La magnitud del
+								fenómeno también se evidenciaba visualmente, mostrando cómo algunas personas no lograban
+								evacuar a tiempo.
+							</p>
+						</div>
+
+						<div class='overflow-hidden rounded-lg border-2 border-secondary'>
+							<enhanced:img alt='Demps demo' src={DempsDemo} />
+						</div>
+
+						<div class='mt-8 flex flex-wrap gap-2 pb-2'>
+							<Badge>SvelteKit</Badge>
+							<Badge>Vite</Badge>
+							<Badge>TailwindCSS</Badge>
+							<Badge>TypeScript</Badge>
+							<Badge>Zod</Badge>
+							<Badge>LeafletJS</Badge>
+							<Badge>Turf.js</Badge>
+							<Badge>Docker</Badge>
+							<Badge>Node.js</Badge>
+							<Badge>C++</Badge>
 						</div>
 					{/snippet}
 				</Accordion>

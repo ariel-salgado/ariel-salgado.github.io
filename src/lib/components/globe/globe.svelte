@@ -46,7 +46,7 @@
 				markers: [
 					{ location: [-33.45694, -70.64827], size: 0.06 },
 				],
-				scale: 2.5,
+				scale: 3.5,
 				offset: [0, width * 2 * height_coefficient * 0.7],
 				onRender: (state) => {
 					if (!pointer_interacting) {

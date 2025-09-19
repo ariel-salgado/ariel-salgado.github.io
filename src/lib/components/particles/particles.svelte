@@ -1,7 +1,7 @@
-<script lang="ts">
-	import { cn } from "$lib/utils";
-	import { onMount } from "svelte";
-	import { on } from "svelte/events";
+<script lang='ts'>
+	import { cn } from '$lib/utils';
+	import { onMount } from 'svelte';
+	import { on } from 'svelte/events';
 
 	interface Circle {
 		x: number;
@@ -33,7 +33,7 @@
 		staticity = 50,
 		ease = 50,
 		size = 0.4,
-		color = "#ffffff",
+		color = '#ffffff',
 		vx = 0,
 		vy = 0,
 	}: Props = $props();
@@ -45,15 +45,15 @@
 	let mouse = $state({ x: 0, y: 0 });
 	let canvas_size = $state({ w: 0, h: 0 });
 
-	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
+	const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
 
 	function hex_to_rgb(hex: string): number[] {
-		hex = hex.replace("#", "");
+		hex = hex.replace('#', '');
 		if (hex.length === 3) {
 			hex = hex
-				.split("")
-				.map((char) => char + char)
-				.join("");
+				.split('')
+				.map(char => char + char)
+				.join('');
 		}
 		const hex_int = Number.parseInt(hex, 16);
 		const r = (hex_int >> 16) & 255;
@@ -71,8 +71,8 @@
 		start2: number,
 		end2: number,
 	): number {
-		const remapped =
-			((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
+		const remapped
+			= ((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
 		return remapped > 0 ? remapped : 0;
 	}
 
@@ -120,12 +120,13 @@
 	}
 
 	function draw_circle(circle: Circle) {
-		if (!context) return;
+		if (!context)
+			return;
 		const { x, y, translate_x, translate_y, size, alpha } = circle;
 		context.translate(translate_x, translate_y);
 		context.beginPath();
 		context.arc(x, y, size, 0, 2 * Math.PI);
-		context.fillStyle = `rgba(${rgb_color.join(", ")}, ${alpha})`;
+		context.fillStyle = `rgba(${rgb_color.join(', ')}, ${alpha})`;
 		context.fill();
 		context.setTransform(dpr, 0, 0, dpr, 0, 0);
 	}
@@ -149,28 +150,29 @@
 				if (circle.alpha > circle.target_alpha) {
 					circle.alpha = circle.target_alpha;
 				}
-			} else {
+			}
+			else {
 				circle.alpha = circle.target_alpha * remapped_closest_edge;
 			}
 
 			circle.x += circle.dx + vx;
 			circle.y += circle.dy + vy;
-			circle.translate_x +=
-				(mouse.x / (staticity / circle.magnetism) -
-					circle.translate_x) /
-				ease;
-			circle.translate_y +=
-				(mouse.y / (staticity / circle.magnetism) -
-					circle.translate_y) /
-				ease;
+			circle.translate_x
+				+= (mouse.x / (staticity / circle.magnetism)
+					- circle.translate_x)
+				/ ease;
+			circle.translate_y
+				+= (mouse.y / (staticity / circle.magnetism)
+					- circle.translate_y)
+				/ ease;
 
 			draw_circle(circle);
 
 			if (
-				circle.x < -circle.size ||
-				circle.x > canvas_size.w + circle.size ||
-				circle.y < -circle.size ||
-				circle.y > canvas_size.h + circle.size
+				circle.x < -circle.size
+				|| circle.x > canvas_size.w + circle.size
+				|| circle.y < -circle.size
+				|| circle.y > canvas_size.h + circle.size
 			) {
 				circles[i] = create_circle();
 			}
@@ -184,8 +186,8 @@
 			const { w, h } = canvas_size;
 			const x = event.clientX - rect.left - w / 2;
 			const y = event.clientY - rect.top - h / 2;
-			const is_inside =
-				x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+			const is_inside
+				= x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
 
 			if (is_inside) {
 				mouse.x = x;
@@ -196,12 +198,12 @@
 
 	onMount(() => {
 		if (canvas_ref) {
-			context = canvas_ref.getContext("2d");
+			context = canvas_ref.getContext('2d');
 			resize_canvas();
 			animate();
 
-			const on_resize = on(window, "resize", resize_canvas);
-			const on_mouse_move = on(window, "mousemove", handle_mouse_move);
+			const on_resize = on(window, 'resize', resize_canvas);
+			const on_mouse_move = on(window, 'mousemove', handle_mouse_move);
 
 			return () => {
 				on_resize();
@@ -213,8 +215,8 @@
 
 <div
 	bind:this={container_ref}
-	class={cn("absolute size-full isolate", class_name)}
-	aria-hidden="true"
+	class={cn('absolute isolate size-full', class_name)}
+	aria-hidden='true'
 >
-	<canvas bind:this={canvas_ref} class="size-full"></canvas>
+	<canvas bind:this={canvas_ref} class='size-full'></canvas>
 </div>

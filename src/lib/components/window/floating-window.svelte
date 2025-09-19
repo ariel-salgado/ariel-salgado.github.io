@@ -1,11 +1,11 @@
-<script lang="ts">
-	import type { ComponentProps } from "svelte";
+<script lang='ts'>
+	import type { ComponentProps } from 'svelte';
 
-	import X from "phosphor-svelte/lib/X";
+	import X from 'phosphor-svelte/lib/X';
 
-	import { floatable } from "$lib/utils";
+	import { floatable } from '$lib/utils';
 
-	import Window from "./window.svelte";
+	import Window from './window.svelte';
 
 	interface Props extends ComponentProps<typeof Window> {
 		open?: boolean;
@@ -44,33 +44,33 @@
 
 {#if open}
 	<Window
-		class="absolute aspect-auto size-full max-h-[70vh] overflow-hidden"
+		class='absolute aspect-auto size-full max-h-[70vh] overflow-hidden'
 		{...rest}
-		style="top: {position?.y}px; left: {position?.x}px;"
+		style='top: {position?.y}px; left: {position?.x}px;'
 		bind:ref={window_element}
 	>
 		{#snippet header()}
 			<div
-				class="flex size-full h-14 cursor-move items-center justify-between select-none"
+				class='flex size-full h-14 cursor-move items-center justify-between select-none'
 				{@attach floatable(window_element)}
-				role="dialog"
-				tabindex="0"
+				role='dialog'
+				tabindex='0'
 			>
-				<div class="pointer-events-none">
+				<div class='pointer-events-none'>
 					{@render wheader?.()}
 				</div>
 				<button
-					class="pointer-events-auto flex cursor-pointer items-center rounded bg-transparent p-1 text-primary transition-colors focus-within:text-foreground hover:text-foreground"
+					class='pointer-events-auto flex cursor-pointer items-center rounded bg-transparent p-1 text-primary transition-colors focus-within:text-foreground hover:text-foreground'
 					onclick={() => (open = false)}
 				>
-					<span class="text-xl">[</span>
-					<X class="inline-block size-5 align-middle" weight="bold" />
-					<span class="text-xl">]</span>
+					<span class='text-xl'>[</span>
+					<X class='inline-block size-5 align-middle' weight='bold' />
+					<span class='text-xl'>]</span>
 				</button>
 			</div>
 		{/snippet}
 		{#snippet content()}
-			<div class="size-full overflow-scroll">
+			<div class='size-full overflow-scroll'>
 				{@render wcontent()}
 			</div>
 		{/snippet}

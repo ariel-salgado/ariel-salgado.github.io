@@ -17,7 +17,7 @@
 </script>
 
 <div class={cn('border-b border-muted', class_name)} {...rest}>
-	<button class='flex w-full items-center justify-between py-4 cursor-pointer' onclick={() => open = !open}>
+	<button class='flex w-full cursor-pointer items-center justify-between py-4' onclick={() => open = !open}>
 		<div class='text-left'>
 			{#if typeof header === 'string'}
 				{header}

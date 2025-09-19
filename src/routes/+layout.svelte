@@ -28,7 +28,7 @@
 
 <div class='relative size-full h-screen overflow-hidden bg-gradient-to-t from-background to-black'>
 	<div class='absolute inset-0 isolate z-0 mystic-mist opacity-40'></div>
-	<Particles class='absolute isolate z-0' />
+	<Particles />
 
 	<main class='isolate z-10 size-full'>
 		{@render children()}

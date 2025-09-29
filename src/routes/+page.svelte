@@ -4,6 +4,7 @@
 	import QuestionIcon from 'phosphor-svelte/lib/Question';
 	import EnvelopeIcon from 'phosphor-svelte/lib/Envelope';
 	import TranslateIcon from 'phosphor-svelte/lib/Translate';
+	import BriefcaseIcon from 'phosphor-svelte/lib/Briefcase';
 	import RedOceanDemo from '$lib/assets/videos/redocean.mp4';
 	import DempsDemo from '$lib/assets/images/demps.jpg?enhanced';
 	import GraduationCapIcon from 'phosphor-svelte/lib/GraduationCap';
@@ -17,11 +18,13 @@
 		Link,
 		Accordion,
 		Badge,
+		MultiShellCommand,
 	} from '$lib/components';
 
-	let open_faq = $state<boolean>(false);
 	let open_info = $state<boolean>(false);
-	let open_works = $state<boolean>(false);
+	let open_experience = $state<boolean>(false);
+	let open_proyects = $state<boolean>(false);
+	let open_faq = $state<boolean>(false);
 	let open_contact = $state<boolean>(false);
 
 	let main_window = $state<HTMLDivElement>();
@@ -54,14 +57,20 @@
 					>
 						<InfoIcon class='inline-block size-18 align-middle' />
 					</button>
-
 					<button
 						class='cursor-pointer'
-						onclick={() => (open_works = !open_works)}
+						onclick={() => (open_experience = !open_experience)}
+					>
+						<BriefcaseIcon
+							class='inline-block size-18 align-middle'
+						/>
+					</button>
+					<button
+						class='cursor-pointer'
+						onclick={() => (open_proyects = !open_proyects)}
 					>
 						<FolderIcon class='inline-block size-18 align-middle' />
 					</button>
-
 					<button
 						class='cursor-pointer'
 						onclick={() => (open_faq = !open_faq)}
@@ -70,7 +79,6 @@
 							class='inline-block size-18 align-middle'
 						/>
 					</button>
-
 					<button
 						class='cursor-pointer'
 						onclick={() => (open_contact = !open_contact)}
@@ -202,10 +210,10 @@
 	{/snippet}
 </FloatingWindow>
 
-<!-- Projects -->
-<FloatingWindow bind:open={open_works}>
+<!-- Experience -->
+<FloatingWindow bind:open={open_experience}>
 	{#snippet header()}
-		<h2 class='text-xl font-medium text-foreground'>mis proyectos</h2>
+		<h2 class='text-xl font-medium text-foreground'>mi experiencia</h2>
 	{/snippet}
 	{#snippet content()}
 		<section class='flex flex-col px-10 pt-6 pb-24'>
@@ -331,7 +339,6 @@
 								GeoJSON mediante el editor integrado se
 								encuentra disponible.
 							</p>
-
 							<p>
 								<Link
 									class='text-primary'
@@ -345,13 +352,11 @@
 								</Link>
 							</p>
 						</div>
-
 						<div
 							class='overflow-hidden rounded-lg border-2 border-secondary'
 						>
 							<enhanced:img alt='Demps demo' src={DempsDemo} />
 						</div>
-
 						<div class='flex flex-wrap gap-2'>
 							<Badge>SvelteKit</Badge>
 							<Badge>Vite</Badge>
@@ -371,7 +376,7 @@
 				{#snippet header()}
 					<hgroup class='w-full'>
 						<h3 class='pb-1 text-2xl font-medium text-primary'>
-							Ingeniero de Software @ Consorcio Progresa
+							Práctica Profesional @ Consorcio Progresa
 						</h3>
 						<p class='text-muted-foreground'>
 							Marzo 2022 - Octubre 2022
@@ -397,7 +402,6 @@
 								Discord.
 							</p>
 						</div>
-
 						<div class='flex flex-wrap gap-2'>
 							<Badge>Angular</Badge>
 							<Badge>TypeScript</Badge>
@@ -408,6 +412,307 @@
 							<Badge>Github</Badge>
 							<Badge>Notion</Badge>
 						</div>
+					</section>
+				{/snippet}
+			</Accordion>
+		</section>
+	{/snippet}
+</FloatingWindow>
+
+<FloatingWindow bind:open={open_proyects}>
+	{#snippet header()}
+		<h2 class='text-xl font-medium text-foreground'>mis proyectos</h2>
+	{/snippet}
+	{#snippet content()}
+		<section class='flex flex-col px-10 pt-6 pb-24'>
+			<p>
+				He desarrollado algunos proyectos y repositorios personales
+				tanto durante mi formación académica como en mi tiempo libre.
+			</p>
+			<Accordion>
+				{#snippet header()}
+					<hgroup class='w-full'>
+						<h3 class='pb-1 text-2xl font-medium text-primary'>
+							ESLint Config
+						</h3>
+						<p class='text-muted-foreground'>
+							@ariel-salgado/eslint-config
+						</p>
+					</hgroup>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							Este proyecto se trata de una configuración de
+							ESLint bastante completa y altamente personalizable,
+							que incluye una amplia variedad de reglas
+							predefinidas. Ofrece soporte para JavaScript,
+							TypeScript, Svelte y más. La principal diferencia
+							respecto a otras configuraciones radica en que
+							incorpora soporte para TailwindCSS y además optimiza
+							lógicas booleanas mediante la ley de De Morgan.
+						</p>
+						<p>
+							Este proyecto es público, y se encuentra disponible
+							en
+							<Link
+								class='text-primary'
+								href='https://github.com/ariel-salgado/eslint-config/tree/main'
+								target='_blank'
+							>
+								Github
+							</Link>
+							y
+							<Link
+								class='text-primary'
+								href='https://www.npmjs.com/package/@ariel-salgado/eslint-config'
+								target='_blank'
+							>
+								NPM
+							</Link>
+							, puedes instalarlo con el siguiente comando:
+						</p>
+						<div>
+							<MultiShellCommand
+								package_name='-D @ariel-salgado/eslint-config'
+							/>
+						</div>
+					</section>
+				{/snippet}
+			</Accordion>
+			<Accordion>
+				{#snippet header()}
+					<hgroup class='w-full'>
+						<h3 class='pb-1 text-2xl font-medium text-primary'>
+							ESLint Plugin
+						</h3>
+						<p class='text-muted-foreground'>
+							@ariel-salgado/eslint-plugin-ariel
+						</p>
+					</hgroup>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							Este proyecto es un plugin para ESLint que incluye
+							un conjunto de reglas personalizadas y que se
+							integra directamente con la configuración de ESLint
+							mencionada anteriormente. Las reglas definidas no
+							solo buscan mejorar la legibilidad del código, sino
+							también optimizar la sintaxis y sugerir alternativas
+							dentro de las funciones, con el objetivo de mantener
+							un estilo de código más consistente y uniforme.
+						</p>
+						<p>
+							Este proyecto es público, y se encuentra disponible
+							en
+							<Link
+								class='text-primary'
+								href='https://github.com/ariel-salgado/eslint-plugin-ariel'
+								target='_blank'
+							>
+								Github
+							</Link>
+							y
+							<Link
+								class='text-primary'
+								href='https://www.npmjs.com/package/eslint-plugin-ariel'
+								target='_blank'
+							>
+								NPM
+							</Link>
+							, puedes instalarlo con el siguiente comando:
+						</p>
+						<div>
+							<MultiShellCommand
+								package_name='-D eslint-plugin-ariel'
+							/>
+						</div>
+					</section>
+				{/snippet}
+			</Accordion>
+		</section>
+	{/snippet}
+</FloatingWindow>
+
+<!-- Frequent asked questions -->
+<FloatingWindow bind:open={open_faq}>
+	{#snippet header()}
+		<h2 class='text-xl font-medium text-foreground'>
+			preguntas frequentes
+		</h2>
+	{/snippet}
+	{#snippet content()}
+		<section class='flex flex-col px-10 pt-6 pb-24'>
+			<!-- Languages -->
+			<Accordion>
+				{#snippet header()}
+					<h3 class='pb-1 text-2xl font-medium text-primary'>
+						¿Qué lenguajes de programación has utilizado?
+					</h3>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							A lo largo de mi formación académica y experiencia
+							laboral he trabajado con diversos lenguajes de
+							programación.
+						</p>
+						<ul class='list-disc pl-8 *:pl-2'>
+							<li>JavaScript / TypeScript</li>
+							<li>C / C++</li>
+							<li>Java</li>
+							<li>Python</li>
+							<li>Go</li>
+							<li>PHP</li>
+						</ul>
+					</section>
+				{/snippet}
+			</Accordion>
+
+			<!-- Frameworks -->
+			<Accordion>
+				{#snippet header()}
+					<h3 class='pb-1 text-2xl font-medium text-primary'>
+						¿Qué librerías y frameworks has utilizado?
+					</h3>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							En los diferentes proyectos y trabajos en los que he
+							participado, he utilizado una amplia variedad de
+							librerías, frameworks y herramientas.
+						</p>
+
+						<!-- Tools -->
+						<div>
+							<h4
+								class='pb-1 text-xl font-semibold text-secondary'
+							>
+								Herramientas
+							</h4>
+							<ul class='list-disc pl-8 *:pl-2'>
+								<li>Git</li>
+								<li>Docker</li>
+								<li>Vite</li>
+								<li>Zod</li>
+							</ul>
+						</div>
+
+						<!-- Frontend -->
+						<div>
+							<h4
+								class='pb-1 text-xl font-semibold text-secondary'
+							>
+								Frontend
+							</h4>
+							<ul class='list-disc pl-8 *:pl-2'>
+								<li>React</li>
+								<li>Next.js</li>
+								<li>Vue</li>
+								<li>Svelte</li>
+								<li>SvelteKit</li>
+								<li>Tailwind CSS</li>
+							</ul>
+						</div>
+
+						<!-- Backend -->
+						<div>
+							<h4
+								class='pb-1 text-xl font-semibold text-secondary'
+							>
+								Backend
+							</h4>
+							<ul class='list-disc pl-8 *:pl-2'>
+								<li>Node.js</li>
+								<li>Bun</li>
+								<li>Express</li>
+								<li>Hono</li>
+								<li>NestJS</li>
+								<li>Laravel</li>
+								<li>Fiber</li>
+								<li>Echo</li>
+								<li>Gin</li>
+								<li>Spring Boot</li>
+								<li>Hibernate</li>
+								<li>Drizzle ORM</li>
+								<li>Prisma ORM</li>
+								<li>Flask</li>
+								<li>FastAPI</li>
+							</ul>
+						</div>
+
+						<!-- Testing -->
+						<div>
+							<h4
+								class='pb-1 text-xl font-semibold text-secondary'
+							>
+								Testing
+							</h4>
+							<ul class='list-disc pl-8 *:pl-2'>
+								<li>Vitest</li>
+								<li>Playwright</li>
+								<li>JUnit</li>
+							</ul>
+						</div>
+
+						<!-- Maps -->
+						<div>
+							<h4
+								class='pb-1 text-xl font-semibold text-secondary'
+							>
+								Mapas y geovisualización
+							</h4>
+							<ul class='list-disc pl-8 *:pl-2'>
+								<li>Leaflet.js</li>
+								<li>Mapbox GL</li>
+								<li>Turf.js</li>
+							</ul>
+						</div>
+
+						<!-- Data Science -->
+						<div>
+							<h4
+								class='pb-1 text-xl font-semibold text-secondary'
+							>
+								Data Science y análisis de datos
+							</h4>
+							<ul class='list-disc pl-8 *:pl-2'>
+								<li>Pandas</li>
+								<li>NumPy</li>
+								<li>Matplotlib</li>
+								<li>Seaborn</li>
+								<li>scikit-learn</li>
+								<li>Jupyter</li>
+							</ul>
+						</div>
+					</section>
+				{/snippet}
+			</Accordion>
+			<Accordion>
+				{#snippet header()}
+					<h3 class='pb-1 text-2xl font-medium text-primary'>
+						¿Qué plataformas has utilizado?
+					</h3>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							Como no tengo aún una experiencia extensa en
+							proyectos de gran magnitud, no he trabajado con una
+							gran variedad de plataformas externas. Sin embargo,
+							sí he utilizado algunas.
+						</p>
+						<ul class='list-disc pl-8 *:pl-2'>
+							<li>Jira</li>
+							<li>AWS</li>
+							<li>GCP</li>
+							<li>Netlify</li>
+							<li>Supabase</li>
+							<li>Firebase</li>
+							<li>MongoDB Atlas</li>
+						</ul>
 					</section>
 				{/snippet}
 			</Accordion>

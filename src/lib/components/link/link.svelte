@@ -11,6 +11,10 @@
 	let { children, class: class_name, ...rest }: Props = $props();
 </script>
 
-<a class={cn('inline-flex w-fit items-center gap-x-1 focus-within:underline hover:underline', class_name)} referrerpolicy='no-referrer' {...rest}>
+<a class={cn(`
+  inline-flex w-fit items-center gap-x-1
+  focus-within:underline
+  hover:underline
+`, class_name)} referrerpolicy='no-referrer' {...rest}>
 	{@render children()}
 </a>

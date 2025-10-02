@@ -26,7 +26,12 @@
 			{/if}
 		</div>
 
-		<CaretDown class={`inline-block size-6 align-middle transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+		<CaretDown class={`
+    inline-block size-6 align-middle transition-transform duration-300
+    ${open
+				? `rotate-180`
+				: ''}
+  `} />
 	</button>
 
 	{#if open}

@@ -51,7 +51,9 @@
 	>
 		{#snippet header()}
 			<div
-				class='flex size-full h-14 cursor-move items-center justify-between select-none'
+				class='
+					flex size-full h-14 cursor-move items-center justify-between select-none
+				'
 				{@attach floatable(window_element)}
 				role='dialog'
 				tabindex='0'
@@ -60,7 +62,12 @@
 					{@render wheader?.()}
 				</div>
 				<button
-					class='pointer-events-auto flex cursor-pointer items-center rounded bg-transparent p-1 text-primary transition-colors focus-within:text-foreground hover:text-foreground'
+					class='
+						pointer-events-auto flex cursor-pointer items-center rounded-sm
+						bg-transparent p-1 text-primary transition-colors
+						focus-within:text-foreground
+						hover:text-foreground
+					'
 					onclick={() => (open = false)}
 				>
 					<span class='text-xl'>[</span>

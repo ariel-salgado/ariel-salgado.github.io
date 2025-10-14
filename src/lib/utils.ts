@@ -4,6 +4,7 @@ import type { Attachment } from 'svelte/attachments';
 import { clsx } from 'clsx';
 import { on } from 'svelte/events';
 import { twMerge } from 'tailwind-merge';
+import { MediaQuery } from 'svelte/reactivity';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -79,4 +80,8 @@ export function floatable<T extends HTMLElement>(container?: HTMLElement): Attac
 			onmouseup?.();
 		};
 	};
+}
+
+export function is_mobile() {
+	return new MediaQuery('max-width: 767px');
 }

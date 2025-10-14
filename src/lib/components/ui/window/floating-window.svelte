@@ -69,7 +69,7 @@
 					onclick={() => (open = false)}
 				>
 					<span class='text-xl'>[</span>
-					<X class='inline-block size-5 align-middle' weight='bold' />
+					<X class='mt-1 inline-block size-5 align-middle' weight='bold' />
 					<span class='text-xl'>]</span>
 				</button>
 			</div>

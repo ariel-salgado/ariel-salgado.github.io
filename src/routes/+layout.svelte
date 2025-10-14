@@ -3,8 +3,8 @@
 
 	import '../app.css';
 
-	import { Particles } from '$lib/components';
 	import { onNavigate } from '$app/navigation';
+	import { Particles } from '$lib/components/ui';
 
 	interface Props {
 		children: Snippet;

@@ -67,11 +67,12 @@
 	</div>
 
 	<div class='relative rounded-b-lg bg-alt-background p-4'>
-		<pre class='overflow-x-auto font-mono text-sm text-foreground'>
-			<code>
+		<pre class='overflow-x-auto font-mono text-sm whitespace-normal text-foreground'>
+			<code class='whitespace-normal'>
 				{merged_managers.find(m => m.id === selected_manager)?.command} {package_name}
 			</code>
 		</pre>
+
 		<button
 			class='
 				absolute top-2 right-2 cursor-pointer rounded-md bg-background p-1.5

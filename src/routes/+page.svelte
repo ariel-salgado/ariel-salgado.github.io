@@ -10,6 +10,7 @@
 	import GraduationCapIcon from 'phosphor-svelte/lib/GraduationCap';
 	import ArrowSquareOutIcon from 'phosphor-svelte/lib/ArrowSquareOut';
 	import ProfilePicture from '$lib/assets/images/profile.jpg?enhanced';
+	import PokedexPicture from '$lib/assets/images/pokedex.png?enhanced';
 
 	import { floatable } from '$lib/utils';
 	import {
@@ -355,11 +356,11 @@
 							</p>
 							<p class='leading-relaxed'>
 								Actualmente, la plataforma no puede operar
-								completamente, ya que no está conectada al
-								simulador; sin embargo, la funcionalidad de
-								importar cartas de inundación y editar archivos
-								GeoJSON mediante el editor integrado se
-								encuentra disponible.
+								completamente, ya que no cuenta con el simulador
+								en la infraestructura actual; sin embargo, la
+								funcionalidad de importar cartas de inundación y
+								editar archivos GeoJSON mediante el editor
+								integrado se encuentra disponible.
 							</p>
 							<p>
 								<Link
@@ -447,9 +448,10 @@
 	{/snippet}
 	{#snippet content()}
 		<section class='flex flex-col px-10 pt-6 pb-24'>
-			<p>
-				He desarrollado algunos proyectos y repositorios personales
-				tanto durante mi formación académica como en mi tiempo libre.
+			<p class='mb-4'>
+				Durante mi formación y tiempo libre he desarrollado algunos
+				proyectos y repositorios personales. Aquí una lista de algunos
+				de los más relevantes.
 			</p>
 			<Accordion>
 				{#snippet header()}
@@ -648,6 +650,57 @@
 								/>
 							</Link>
 						</p>
+					</section>
+				{/snippet}
+			</Accordion>
+			<Accordion>
+				{#snippet header()}
+					<hgroup class='w-full'>
+						<h3 class='pb-1 text-2xl font-medium text-primary'>
+							Pokedex App
+						</h3>
+						<p class='text-muted-foreground'>
+							@ariel-salgado/pokedex-react
+						</p>
+					</hgroup>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							Este proyecto es una implementación personal de la
+							clásica Pokédex, desarrollada con React, TanStack
+							Router y la Pokémon API. La aplicación permite
+							explorar Pokémon por generación y buscar por nombre
+							o ID.
+						</p>
+						<p>
+							Al acceder a los detalles de cada Pokémon, se
+							pueden visualizar sus distintos sprites (vista
+							frontal, trasera y su versión shiny), además de
+							escuchar su sonido característico presente en los
+							juegos. También muestra las entradas o descripciones
+							de los diferentes títulos de la saga y un resumen de
+							sus estadísticas base.
+						</p>
+						<p>
+							Este proyecto es público, y se encuentra disponible
+							en
+							<Link
+								class='text-primary'
+								href='https://github.com/ariel-salgado/pokedex-react'
+								target='_blank'
+							>
+								<span>Github</span>
+								<ArrowSquareOutIcon
+									class='inline-block size-4 align-middle'
+								/>
+							</Link>
+						</p>
+						<div
+							class='overflow-hidden rounded-lg border-2 border-secondary'
+						>
+							<enhanced:img alt='Pokedex app' src={PokedexPicture} />
+						</div>
 					</section>
 				{/snippet}
 			</Accordion>

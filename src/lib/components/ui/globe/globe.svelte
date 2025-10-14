@@ -48,7 +48,7 @@
 				],
 				scale: 3.5,
 				offset: [0, width * 2 * height_coefficient * 0.7],
-				onRender: (state) => {
+				onRender: (state: any) => {
 					if (!pointer_interacting) {
 						phi += 0.003;
 					}

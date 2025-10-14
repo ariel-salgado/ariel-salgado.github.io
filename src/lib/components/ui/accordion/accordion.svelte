@@ -13,11 +13,20 @@
 		content: string | Snippet;
 	}
 
-	let { open = $bindable(false), header, content, class: class_name, ...rest }: Props = $props();
+	let {
+		open = $bindable(false),
+		header,
+		content,
+		class: class_name,
+		...rest
+	}: Props = $props();
 </script>
 
 <div class={cn('border-b border-muted', class_name)} {...rest}>
-	<button class='flex w-full cursor-pointer items-center justify-between py-4' onclick={() => open = !open}>
+	<button
+		class='flex w-full cursor-pointer items-center justify-between py-4'
+		onclick={() => (open = !open)}
+	>
 		<div class='text-left'>
 			{#if typeof header === 'string'}
 				{header}
@@ -26,12 +35,12 @@
 			{/if}
 		</div>
 
-		<CaretDown class={`
-    inline-block size-6 align-middle transition-transform duration-300
-    ${open
-				? `rotate-180`
-				: ''}
-  `} />
+		<CaretDown
+			class={`
+    			inline-block size-6 align-middle transition-transform duration-300
+    			${open ? `rotate-180` : ''}
+  			`}
+		/>
 	</button>
 
 	{#if open}

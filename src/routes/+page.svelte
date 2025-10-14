@@ -19,7 +19,7 @@
 		Accordion,
 		FloatingWindow,
 		MultiShellCommand,
-	} from '$lib/components';
+	} from '$lib/components/ui';
 
 	let open_info = $state<boolean>(false);
 	let open_experience = $state<boolean>(false);
@@ -597,6 +597,49 @@
 							<Link
 								class='text-primary'
 								href='https://github.com/ariel-salgado/emosense'
+								target='_blank'
+							>
+								<span>Github</span>
+								<ArrowSquareOutIcon
+									class='inline-block size-4 align-middle'
+								/>
+							</Link>
+						</p>
+					</section>
+				{/snippet}
+			</Accordion>
+			<Accordion>
+				{#snippet header()}
+					<hgroup class='w-full'>
+						<h3 class='pb-1 text-2xl font-medium text-primary'>
+							FFT Performance Comparison
+						</h3>
+						<p class='text-muted-foreground'>
+							@ariel-salgado/fft-performance
+						</p>
+					</hgroup>
+				{/snippet}
+				{#snippet content()}
+					<section class='flex flex-col gap-y-6 py-2'>
+						<p>
+							Este proyecto en C++ implementa dos algoritmos de la
+							Transformada Rápida de Fourier (FFT): una versión
+							secuencial y otra que utiliza operaciones
+							vectoriales para mejorar el rendimiento (SIMD).
+						</p>
+						<p>
+							El objetivo final del proyecto era realizar una
+							comparación del rendimiento entre ambas
+							implementaciones. Donde se analizó la velocidad de
+							ejecución, para determinar las ventajas de cada
+							enfoque en diferentes escenarios y configuraciones.
+						</p>
+						<p>
+							Este proyecto es público, y se encuentra disponible
+							en
+							<Link
+								class='text-primary'
+								href='https://github.com/ariel-salgado/fft-performance'
 								target='_blank'
 							>
 								<span>Github</span>

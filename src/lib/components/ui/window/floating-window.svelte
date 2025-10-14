@@ -51,9 +51,7 @@
 	>
 		{#snippet header()}
 			<div
-				class='
-					flex size-full h-14 cursor-move items-center justify-between select-none
-				'
+				class='flex size-full h-14 cursor-move items-center justify-between select-none'
 				{@attach floatable(window_element)}
 				role='dialog'
 				tabindex='0'

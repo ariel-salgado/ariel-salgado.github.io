@@ -1,6 +1,8 @@
 export { Link } from './link';
-export { Badge } from './badge';
 export { Particles } from './particles';
-export { Accordion } from './accordion';
+export { Video, Picture } from './picture';
+export { Badge, BadgeList } from './badge';
 export { Window, FloatingWindow } from './window';
+export { Accordion, AccordionItem } from './accordion';
+export { BlockList, BlockItem, BulletList } from './list';
 export { MultiShellCommand } from './multi-shell-command';

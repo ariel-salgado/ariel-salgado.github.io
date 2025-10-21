@@ -1,6 +1,8 @@
 <script lang='ts'>
 	import ArrowSquareOutIcon from 'phosphor-svelte/lib/ArrowSquareOut';
 	import PokedexPicture from '$lib/assets/images/pokedex.png?enhanced';
+	import SimpyBankPicture from '$lib/assets/images/simpy.png?enhanced';
+	import EmosensePicture from '$lib/assets/images/emosense.png?enhanced';
 
 	import {
 		Link,
@@ -42,8 +44,7 @@
 					booleanas mediante la ley de De Morgan.
 				</p>
 				<p>
-					Este proyecto es público, y se encuentra disponible en
-					<Link
+					Este proyecto es público, y se encuentra disponible en <Link
 						class='text-primary'
 						href='https://github.com/ariel-salgado/eslint-config/tree/main'
 						target='_blank'
@@ -52,9 +53,7 @@
 						<ArrowSquareOutIcon
 							class='inline-block size-4 align-middle'
 						/>
-					</Link>
-					y
-					<Link
+					</Link> y <Link
 						class='text-primary'
 						href='https://www.npmjs.com/package/@ariel-salgado/eslint-config'
 						target='_blank'
@@ -63,12 +62,12 @@
 						<ArrowSquareOutIcon
 							class='inline-block size-4 align-middle'
 						/>
-					</Link>
-					, puedes instalarlo con el siguiente comando:
+					</Link> , puedes instalarlo con el siguiente comando:
 				</p>
 				<div>
 					<MultiShellCommand
-						package_name='-D @ariel-salgado/eslint-config'
+						package_name='-D
+							@ariel-salgado/eslint-config'
 					/>
 				</div>
 			</AccordionItem>
@@ -88,8 +87,7 @@
 					y uniforme.
 				</p>
 				<p>
-					Este proyecto es público, y se encuentra disponible en
-					<Link
+					Este proyecto es público, y se encuentra disponible en <Link
 						class='text-primary'
 						href='https://github.com/ariel-salgado/eslint-plugin-ariel'
 						target='_blank'
@@ -98,9 +96,7 @@
 						<ArrowSquareOutIcon
 							class='inline-block size-4 align-middle'
 						/>
-					</Link>
-					y
-					<Link
+					</Link> y <Link
 						class='text-primary'
 						href='https://www.npmjs.com/package/eslint-plugin-ariel'
 						target='_blank'
@@ -109,17 +105,13 @@
 						<ArrowSquareOutIcon
 							class='inline-block size-4 align-middle'
 						/>
-					</Link>
-					, puedes instalarlo con el siguiente comando:
+					</Link> , puedes instalarlo con el siguiente comando:
 				</p>
 
 				<MultiShellCommand package_name='-D eslint-plugin-ariel' />
 			</AccordionItem>
 
-			<AccordionItem
-				subtitle='@ariel-salgado/emosense'
-				title='Emosense'
-			>
+			<AccordionItem subtitle='@ariel-salgado/emosense' title='Emosense'>
 				<p>
 					Este proyecto es una exploración comparativa de
 					reconocimiento de emociones en el habla utilizando dos
@@ -132,8 +124,7 @@
 					fortalezas y limitaciones de cada metodología.
 				</p>
 				<p>
-					Este proyecto es público, y se encuentra disponible en
-					<Link
+					Este proyecto es público, y se encuentra disponible en <Link
 						class='text-primary'
 						href='https://github.com/ariel-salgado/emosense'
 						target='_blank'
@@ -144,6 +135,43 @@
 						/>
 					</Link>
 				</p>
+
+				<Picture alt='Emosense charts' src={EmosensePicture} />
+			</AccordionItem>
+
+			<AccordionItem
+				subtitle='@ariel-salgado/simpy-bank'
+				title='Simpy Bank'
+			>
+				<p>
+					Este proyecto es una simulación de atención bancaria basada
+					en eventos discretos, diseñada para analizar la eficiencia
+					operativa de un sistema de cajas con atención diferenciada
+					entre clientes normales y preferenciales.
+				</p>
+				<p>
+					El modelo incorpora datos obtenidos en una sucursal bancaria
+					de Viña del Mar, considerando tiempos de llegada, servicio y
+					proporciones de clientes. La simulación evalúa métricas
+					clave como tiempos de espera, utilización de recursos y
+					tasas de abandono, permitiendo identificar cuellos de
+					botella y proponer configuraciones óptimas para mejorar la
+					experiencia del cliente.
+				</p>
+				<p>
+					Este proyecto es público, y se encuentra disponible en <Link
+						class='text-primary'
+						href='https://github.com/ariel-salgado/simpy-bank'
+						target='_blank'
+					>
+						<span>Github</span>
+						<ArrowSquareOutIcon
+							class='inline-block size-4 align-middle'
+						/>
+					</Link>
+				</p>
+
+				<Picture alt='Simpy Bank charts' src={SimpyBankPicture} />
 			</AccordionItem>
 
 			<AccordionItem
@@ -164,8 +192,7 @@
 					configuraciones.
 				</p>
 				<p>
-					Este proyecto es público, y se encuentra disponible en
-					<Link
+					Este proyecto es público, y se encuentra disponible en <Link
 						class='text-primary'
 						href='https://github.com/ariel-salgado/fft-performance'
 						target='_blank'
@@ -197,8 +224,7 @@
 					saga y un resumen de sus estadísticas base.
 				</p>
 				<p>
-					Este proyecto es público, y se encuentra disponible en
-					<Link
+					Este proyecto es público, y se encuentra disponible en <Link
 						class='text-primary'
 						href='https://github.com/ariel-salgado/pokedex-react'
 						target='_blank'

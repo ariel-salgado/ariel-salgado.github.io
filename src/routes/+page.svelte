@@ -40,7 +40,7 @@
 <!-- Dock -->
 <aside
 	class='
-		absolute top-4 left-4 h-[calc(100vh-2rem)] w-16 rounded-2xl border border-alt-background
+		absolute top-4 left-4 z-10000 h-[calc(100vh-2rem)] w-16 rounded-2xl border border-alt-background
 		bg-background/60 px-1.5 py-6 text-foreground
 	'
 >

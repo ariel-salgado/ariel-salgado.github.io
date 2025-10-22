@@ -3,9 +3,11 @@
 
 	import X from 'phosphor-svelte/lib/X';
 
+	import { untrack } from 'svelte';
 	import { floatable } from '$lib/utils';
 
 	import Window from './window.svelte';
+	import { get_window_context } from './context.svelte';
 
 	interface Props extends ComponentProps<typeof Window> {
 		open?: boolean;
@@ -18,35 +20,67 @@
 		...rest
 	}: Props = $props();
 
+	let window_id = $props.id();
+	let window_context = get_window_context();
+	let window_z_index = $state(window_context.get_window_index(window_id));
+
 	let window_element = $state<HTMLDivElement>();
 	let position = $state<{ x: number; y: number } | null>(null);
 
+	$inspect(position);
+
+	$effect(() => {
+		if (open) {
+			untrack(() => {
+				window_context.register(window_id);
+				window_z_index
+					= window_context.set_next_window_index(window_id);
+			});
+		}
+
+		return () => {
+			window_context.unregister(window_id);
+		};
+	});
+
 	$effect(() => {
 		if (open && window_element) {
-			if (position === null) {
-				const { offsetWidth, offsetHeight } = window_element;
-				const x = (window.innerWidth - offsetWidth) / 2;
-				const y = (window.innerHeight - offsetHeight) / 2;
+			untrack(() => {
+				if (position === null) {
+					const { offsetWidth, offsetHeight } = window_element!;
+					const x = (window.innerWidth - offsetWidth) / 2;
+					const y = (window.innerHeight - offsetHeight) / 2;
 
-				position = { x, y };
-			}
+					position = { x, y };
+				}
+			});
 
 			return () => {
-				const rect = window_element?.getBoundingClientRect();
-
-				if (rect && rect.width > 0 && rect.height > 0) {
-					position = { x: rect?.left, y: rect?.top };
-				}
+				save_position();
 			};
 		}
 	});
+
+	function bring_to_front() {
+		window_z_index = window_context.set_next_window_index(window_id);
+	}
+
+	function save_position() {
+		const rect = window_element?.getBoundingClientRect();
+
+		if (rect && rect.width > 0 && rect.height > 0) {
+			position = { x: rect?.left, y: rect?.top };
+		}
+	}
 </script>
 
 {#if open}
 	<Window
 		class='absolute aspect-auto size-full max-h-[70vh] overflow-hidden'
 		{...rest}
-		style='top: {position?.y}px; left: {position?.x}px;'
+		style='top: {position?.y}px; left: {position?.x}px; z-index: {window_z_index};'
+		onmousedown={bring_to_front}
+		onmouseup={save_position}
 		bind:ref={window_element}
 	>
 		{#snippet header()}
@@ -69,7 +103,10 @@
 					onclick={() => (open = false)}
 				>
 					<span class='text-xl'>[</span>
-					<X class='mt-1 inline-block size-5 align-middle' weight='bold' />
+					<X
+						class='mt-1 inline-block size-5 align-middle'
+						weight='bold'
+					/>
 					<span class='text-xl'>]</span>
 				</button>
 			</div>

@@ -5,6 +5,7 @@
 
 	import { onNavigate } from '$app/navigation';
 	import { Particles } from '$lib/components/ui';
+	import { set_window_context } from '$lib/components/ui/window';
 
 	interface Props {
 		children: Snippet;
@@ -24,6 +25,8 @@
 			});
 		});
 	});
+
+	set_window_context();
 </script>
 
 <div

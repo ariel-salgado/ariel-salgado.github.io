@@ -23,14 +23,20 @@
 <div
 	bind:this={ref}
 	class={cn(
-		`flex aspect-video h-auto w-full max-w-3xl flex-col rounded-lg border-2 border-secondary bg-background`,
+		`
+			flex aspect-video h-auto w-full max-w-3xl flex-col rounded-lg border-2 border-secondary
+			bg-background
+		`,
 		class_name,
 	)}
 	{...rest}
 	transition:scale
 >
 	<div
-		class='flex h-14 w-full items-center rounded-t-md border-b-2 border-secondary bg-alt-background px-6 text-alt-foreground'
+		class='
+			flex h-14 w-full items-center rounded-t-md border-b-2 border-secondary bg-alt-background px-6
+			text-alt-foreground
+		'
 	>
 		{@render header?.()}
 	</div>

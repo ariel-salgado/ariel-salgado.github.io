@@ -52,7 +52,9 @@
 			<button
 				class={`
       				relative cursor-pointer px-4 py-2 text-sm font-medium transition-colors
-      				${selected_manager === manager.id ? 'text-primary' : `text-muted-foreground hover:text-foreground`}
+      				${selected_manager === manager.id
+						? 'text-primary'
+						: `text-muted-foreground hover:text-foreground`}
     			`}
 				onclick={() => (selected_manager = manager.id)}
 			>
@@ -75,8 +77,8 @@
 
 		<button
 			class='
-				absolute top-2 right-2 cursor-pointer rounded-md bg-background p-1.5
-				text-muted-foreground transition-colors
+				absolute top-2 right-2 cursor-pointer rounded-md bg-background p-1.5 text-muted-foreground
+				transition-colors
 				hover:bg-muted hover:text-foreground
 			'
 			onclick={copy_to_clipboard}

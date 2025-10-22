@@ -75,10 +75,7 @@
 	)}
 >
 	<canvas
-		class='
-			size-full
-			[contain:layout_paint_size]
-		'
+		class='size-full [contain:layout_paint_size]'
 		{@attach init_globe()}
 		onmousemove={(e) => {
 			if (pointer_interacting !== null) {

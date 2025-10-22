@@ -61,8 +61,8 @@
 				</div>
 				<button
 					class='
-						pointer-events-auto flex cursor-pointer items-center rounded-sm
-						bg-transparent p-1 text-primary transition-colors
+						pointer-events-auto flex cursor-pointer items-center rounded-sm bg-transparent p-1
+						text-primary transition-colors
 						focus-within:text-foreground
 						hover:text-foreground
 					'

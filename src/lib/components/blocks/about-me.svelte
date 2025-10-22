@@ -22,10 +22,7 @@
 	{#snippet content()}
 		<section class='flex flex-col gap-y-6'>
 			<div
-				class='
-					sticky top-0 flex items-center gap-x-8 border-b border-muted bg-background
-					px-10 py-6
-				'
+				class='sticky top-0 flex items-center gap-x-8 border-b border-muted bg-background px-10 py-6'
 			>
 				<div
 					class='aspect-square size-24 rounded-full bg-alt-background'
@@ -53,10 +50,7 @@
 
 			<!-- Self introduction -->
 			<div
-				class='
-					space-y-4 px-10
-					*:leading-relaxed
-				'
+				class='space-y-4 px-10 *:leading-relaxed'
 			>
 				<p>
 					Soy un programador con experiencia en el desarrollo de

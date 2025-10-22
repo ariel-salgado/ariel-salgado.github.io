@@ -20,7 +20,7 @@
     "lint:fix": "eslint --fix"
   },
   "devDependencies": {
-    "@ariel-salgado/eslint-config": "^0.1.7",
+    "@ariel-salgado/eslint-config": "^0.1.9",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/enhanced-img": "^0.8.4",
     "@sveltejs/kit": "^2.47.2",

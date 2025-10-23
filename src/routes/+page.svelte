@@ -1,12 +1,19 @@
 <script lang='ts'>
-	import InfoIcon from 'phosphor-svelte/lib/Info';
-	import FolderIcon from 'phosphor-svelte/lib/Folder';
-	import QuestionIcon from 'phosphor-svelte/lib/Question';
+	import CodeIcon from 'phosphor-svelte/lib/Code';
+	import QuestionMark from 'phosphor-svelte/lib/Question';
 	import EnvelopeIcon from 'phosphor-svelte/lib/Envelope';
+	import BarricadeIcon from 'phosphor-svelte/lib/Barricade';
 	import BriefcaseIcon from 'phosphor-svelte/lib/Briefcase';
-	import Contact from '$lib/components/blocks/contact.svelte';
+	import ReadCvLogoIcon from 'phosphor-svelte/lib/ReadCvLogo';
+	import IdentificationCardIcon from 'phosphor-svelte/lib/IdentificationCard';
 
-	import { Faq, AboutMe, Projects, Experience } from '$lib/components/blocks';
+	import {
+		Faq,
+		AboutMe,
+		Contact,
+		Projects,
+		Experience,
+	} from '$lib/components/blocks';
 
 	let open_faq = $state<boolean>(false);
 	let open_about = $state<boolean>(false);
@@ -40,8 +47,8 @@
 <!-- Dock -->
 <aside
 	class='
-		absolute top-4 left-4 z-10000 h-[calc(100vh-2rem)] w-16 rounded-2xl border border-alt-background
-		bg-background/60 px-1.5 py-6 text-foreground
+		absolute top-4 left-4 z-10000 flex h-[calc(100vh-2rem)] w-16 flex-col justify-between rounded-2xl
+		border border-alt-background bg-background/60 px-1.5 py-6 text-foreground
 	'
 >
 	<div class='flex w-full flex-col items-center gap-y-2'>
@@ -53,7 +60,9 @@
 			'
 			onclick={() => (open_about = !open_about)}
 		>
-			<InfoIcon class='inline-block size-full align-middle' />
+			<IdentificationCardIcon
+				class='inline-block size-full align-middle'
+			/>
 		</button>
 		<button
 			class='
@@ -73,7 +82,7 @@
 			'
 			onclick={() => (open_proyects = !open_proyects)}
 		>
-			<FolderIcon class='inline-block size-full align-middle' />
+			<CodeIcon class='inline-block size-full align-middle' />
 		</button>
 		<button
 			class='
@@ -83,7 +92,7 @@
 			'
 			onclick={() => (open_faq = !open_faq)}
 		>
-			<QuestionIcon class='inline-block size-full align-middle' />
+			<QuestionMark class='inline-block size-full align-middle' />
 		</button>
 		<button
 			class='
@@ -94,6 +103,27 @@
 			onclick={() => (open_contact = !open_contact)}
 		>
 			<EnvelopeIcon class='inline-block size-full align-middle' />
+		</button>
+	</div>
+
+	<div class='flex w-full flex-col items-center gap-y-2'>
+		<button
+			class='
+				size-full cursor-pointer rounded-md p-1.5 transition-colors
+				focus-within:bg-alt-background
+				hover:bg-alt-background
+			'
+		>
+			<BarricadeIcon class='inline-block size-full align-middle' />
+		</button>
+		<button
+			class='
+				size-full cursor-pointer rounded-md p-1.5 transition-colors
+				focus-within:bg-alt-background
+				hover:bg-alt-background
+			'
+		>
+			<ReadCvLogoIcon class='inline-block size-full align-middle' />
 		</button>
 	</div>
 </aside>

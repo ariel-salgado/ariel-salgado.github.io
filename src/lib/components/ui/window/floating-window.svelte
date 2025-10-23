@@ -27,8 +27,6 @@
 	let window_element = $state<HTMLDivElement>();
 	let position = $state<{ x: number; y: number } | null>(null);
 
-	$inspect(position);
-
 	$effect(() => {
 		if (open) {
 			untrack(() => {

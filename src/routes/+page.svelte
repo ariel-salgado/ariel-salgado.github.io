@@ -12,6 +12,7 @@
 		AboutMe,
 		Contact,
 		Projects,
+		Building,
 		Experience,
 	} from '$lib/components/blocks';
 
@@ -19,6 +20,7 @@
 	let open_about = $state<boolean>(false);
 	let open_contact = $state<boolean>(false);
 	let open_proyects = $state<boolean>(false);
+	let open_building = $state<boolean>(false);
 	let open_experience = $state<boolean>(false);
 </script>
 
@@ -114,7 +116,10 @@
 				hover:bg-alt-background
 			'
 		>
-			<BarricadeIcon class='inline-block size-full align-middle' />
+			<BarricadeIcon
+				class='inline-block size-full align-middle'
+				onclick={() => (open_building = !open_building)}
+			/>
 		</button>
 		<button
 			class='
@@ -133,3 +138,5 @@
 <Contact bind:open={open_contact} />
 <Projects bind:open={open_proyects} />
 <Experience bind:open={open_experience} />
+
+<Building bind:open={open_building} />

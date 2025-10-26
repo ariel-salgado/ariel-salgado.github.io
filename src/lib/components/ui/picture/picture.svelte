@@ -14,5 +14,5 @@
 		class_name,
 	)}
 >
-	<enhanced:img src={src} {...rest} />
+	<enhanced:img {src} {...rest} />
 </div>

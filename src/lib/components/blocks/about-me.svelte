@@ -5,7 +5,13 @@
 
 	import { EDUCATION, PERSONAL_SKILLS } from '$lib/constants';
 
-	import { Link, BlockList, BlockItem, BulletList, FloatingWindow } from '../ui';
+	import {
+		Link,
+		BlockList,
+		BlockItem,
+		BulletList,
+		FloatingWindow,
+	} from '../ui';
 
 	interface Props {
 		open: boolean;
@@ -49,9 +55,7 @@
 			</div>
 
 			<!-- Self introduction -->
-			<div
-				class='space-y-4 px-10 *:leading-relaxed'
-			>
+			<div class='space-y-4 px-10 *:leading-relaxed'>
 				<p>
 					Soy un programador con experiencia en el desarrollo de
 					aplicaciones web, diseño de arquitecturas de software y

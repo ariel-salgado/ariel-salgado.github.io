@@ -11,6 +11,12 @@
 	let { children, class: class_name, ...rest }: Props = $props();
 </script>
 
-<li class={cn('rounded-r-md border-l-4 border-secondary bg-alt-background py-3 pl-6', class_name)} {...rest}>
+<li
+	class={cn(
+		'rounded-r-md border-l-4 border-secondary bg-alt-background py-3 pl-6',
+		class_name,
+	)}
+	{...rest}
+>
 	{@render children()}
 </li>

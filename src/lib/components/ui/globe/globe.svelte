@@ -10,7 +10,7 @@
 	interface Props {
 		class?: string;
 		height_coefficient?: number;
-	};
+	}
 
 	let { class: class_name, height_coefficient = 0.2 }: Props = $props();
 
@@ -28,7 +28,11 @@
 		let width = $state(0);
 
 		return (canvas: HTMLCanvasElement) => {
-			const onresize = on(window, 'resize', () => width = canvas.offsetWidth);
+			const onresize = on(
+				window,
+				'resize',
+				() => (width = canvas.offsetWidth),
+			);
 
 			const globe = createGlobe(canvas, {
 				devicePixelRatio: 2,
@@ -43,9 +47,7 @@
 				baseColor: [0.3, 0.3, 0.3],
 				markerColor: [251 / 255, 100 / 255, 21 / 255],
 				glowColor: [1, 1, 1],
-				markers: [
-					{ location: [-33.45694, -70.64827], size: 0.06 },
-				],
+				markers: [{ location: [-33.45694, -70.64827], size: 0.06 }],
 				scale: 3.5,
 				offset: [0, width * 2 * height_coefficient * 0.7],
 				onRender: (state: any) => {
@@ -68,14 +70,9 @@
 	}
 </script>
 
-<div
-	class={cn(
-		'relative m-auto aspect-[1/0.2] w-full',
-		class_name,
-	)}
->
+<div class={cn('relative m-auto aspect-[1/0.2] w-full', class_name)}>
 	<canvas
-		class='size-full [contain:layout_paint_size]'
+		class='size-full contain-[layout_paint_size]'
 		{@attach init_globe()}
 		onmousemove={(e) => {
 			if (pointer_interacting !== null) {

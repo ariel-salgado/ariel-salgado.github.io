@@ -8,7 +8,12 @@
 	let { class: class_name, ...rest }: Props = $props();
 </script>
 
-<div class={cn('overflow-hidden rounded-lg border-2 border-secondary', class_name)}>
+<div
+	class={cn(
+		'overflow-hidden rounded-lg border-2 border-secondary',
+		class_name,
+	)}
+>
 	<video
 		autoplay
 		controls={false}

@@ -52,9 +52,11 @@
 			<button
 				class={`
       				relative cursor-pointer px-4 py-2 text-sm font-medium transition-colors
-      				${selected_manager === manager.id
+      				${
+					selected_manager === manager.id
 						? 'text-primary'
-						: `text-muted-foreground hover:text-foreground`}
+						: `text-muted-foreground hover:text-foreground`
+				}
     			`}
 				onclick={() => (selected_manager = manager.id)}
 			>
@@ -69,7 +71,8 @@
 	</div>
 
 	<div class='relative rounded-b-lg bg-alt-background p-4'>
-		<pre class='overflow-x-auto font-mono text-sm whitespace-normal text-foreground'>
+		<pre
+			class='overflow-x-auto font-mono text-sm whitespace-normal text-foreground'>
 			<code class='whitespace-normal'>
 				{merged_managers.find(m => m.id === selected_manager)?.command} {package_name}
 			</code>

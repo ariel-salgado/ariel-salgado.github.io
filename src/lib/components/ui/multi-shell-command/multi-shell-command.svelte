@@ -16,6 +16,8 @@
 <script lang='ts'>
 	import ClipboardIcon from 'phosphor-svelte/lib/Clipboard';
 
+	import { toast } from 'svelte-sonner';
+
 	interface Props {
 		package_name?: string;
 		package_managers?: PackageManager[];
@@ -43,6 +45,7 @@
 		const manager = merged_managers.find(m => m.id === selected_manager);
 		const command = `${manager?.command} ${package_name}`;
 		navigator.clipboard.writeText(command);
+		toast.success('Copiado al portapapeles');
 	}
 </script>
 

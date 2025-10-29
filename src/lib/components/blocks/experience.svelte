@@ -29,7 +29,7 @@
 	{#snippet content()}
 		<section class='flex flex-col px-10 pt-6 pb-24'>
 			<AccordionItem
-				subtitle='Octubre 2024 - Actualidad'
+				subtitle='Octubre 2024 - Octubre 2025'
 				title='Ingeniero de Software @ RedOcean'
 			>
 				<div class='space-y-4'>

@@ -45,7 +45,7 @@
 					</h3>
 					<p class='text-lg'>Ingeniero Civil Informático</p>
 					<p class='text-lg'>
-						Actualmente CIO en <Link
+						Ex Chief Information Officer en <Link
 							class='text-primary'
 							href='https://redoceanservice.com'
 							target='_blank'>RedOcean</Link

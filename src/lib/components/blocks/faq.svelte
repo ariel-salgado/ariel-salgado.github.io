@@ -25,7 +25,7 @@
 <FloatingWindow bind:open>
 	{#snippet header()}
 		<h2 class='text-xl font-medium text-foreground'>
-			Preguntas Frecuentes
+			preguntas frecuentes
 		</h2>
 	{/snippet}
 

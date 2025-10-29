@@ -2,11 +2,13 @@
 	import CodeIcon from 'phosphor-svelte/lib/Code';
 	import QuestionMark from 'phosphor-svelte/lib/Question';
 	import EnvelopeIcon from 'phosphor-svelte/lib/Envelope';
+	import GithubIcon from 'phosphor-svelte/lib/GithubLogo';
 	import BarricadeIcon from 'phosphor-svelte/lib/Barricade';
 	import BriefcaseIcon from 'phosphor-svelte/lib/Briefcase';
 	import ReadCvLogoIcon from 'phosphor-svelte/lib/ReadCvLogo';
 	import IdentificationCardIcon from 'phosphor-svelte/lib/IdentificationCard';
 
+	import { Link } from '$lib/components/ui';
 	import {
 		Faq,
 		AboutMe,
@@ -14,13 +16,15 @@
 		Projects,
 		Building,
 		Experience,
+		DownloadCV,
 	} from '$lib/components/blocks';
 
 	let open_faq = $state<boolean>(false);
 	let open_about = $state<boolean>(false);
 	let open_contact = $state<boolean>(false);
-	let open_proyects = $state<boolean>(false);
 	let open_building = $state<boolean>(false);
+	let open_download = $state<boolean>(false);
+	let open_proyects = $state<boolean>(false);
 	let open_experience = $state<boolean>(false);
 </script>
 
@@ -29,11 +33,28 @@
 	<meta name='description' content="Ariel Salgado's portfolio" />
 </svelte:head>
 
-<!-- Banner -->
+<!-- Github -->
+<div class='absolute right-6 bottom-6 flex items-center gap-x-3'>
+	<Link
+		class='cursor-pointer'
+		href='https://github.com/ariel-salgado'
+		target='_blank'
+	>
+		<GithubIcon
+			class='
+				inline-block size-10 fill-muted-foreground align-middle transition-colors
+				focus-within:fill-primary
+				hover:fill-primary
+			'
+		/>
+	</Link>
+</div>
+
+<!-- Top Banner -->
 <div
 	class='
 		absolute top-4 right-4 flex items-center gap-x-3 rounded-2xl border-2 border-primary/60 px-6 py-2
-		text-foreground
+		text-foreground select-none
 	'
 >
 	<span class='relative flex size-3'>
@@ -45,6 +66,17 @@
 	</span>
 	<span>Buscando trabajo...</span>
 </div>
+
+<!-- Signature -->
+<aside
+	class='
+		absolute top-1/2 -right-8 -z-1 flex -translate-y-1/2 -rotate-90 flex-col items-center text-center
+		font-mono text-xs text-muted-foreground select-none
+	'
+>
+	<span>Hecho con Svelte.</span>
+	<span>Ariel Salgado @ 2025</span>
+</aside>
 
 <!-- Dock -->
 <aside
@@ -127,6 +159,7 @@
 				focus-within:bg-alt-background
 				hover:bg-alt-background
 			'
+			onclick={() => (open_download = !open_download)}
 		>
 			<ReadCvLogoIcon class='inline-block size-full align-middle' />
 		</button>
@@ -140,3 +173,4 @@
 <Experience bind:open={open_experience} />
 
 <Building bind:open={open_building} />
+<DownloadCV bind:open={open_download} />

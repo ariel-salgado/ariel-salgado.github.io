@@ -28,11 +28,6 @@
 	let open_experience = $state<boolean>(false);
 </script>
 
-<svelte:head>
-	<title>Ariel Salgado's Portfolio</title>
-	<meta name='description' content="Ariel Salgado's portfolio" />
-</svelte:head>
-
 <!-- Github -->
 <div class='absolute right-6 bottom-6 flex items-center gap-x-3'>
 	<Link

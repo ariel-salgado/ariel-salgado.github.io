@@ -3,6 +3,8 @@
 
 	import '../app.css';
 
+	import favicon from '$lib/assets/favicon.ico';
+
 	import { Toaster } from 'svelte-sonner';
 	import { onNavigate } from '$app/navigation';
 	import { Particles } from '$lib/components/ui';
@@ -29,6 +31,20 @@
 
 	set_window_context();
 </script>
+
+<svelte:head>
+	<link href={favicon} rel='icon' />
+	<title>Portafolio | Ariel Salgado</title>
+	<meta
+		name='description'
+		content='Ingeniero Civil Informático con experiencia en desarrollo web. Apasionado por crear soluciones eficientes y escalables.'
+	/>
+	<meta
+		name='keywords'
+		content='Ariel Salgado, Ingeniero Civil Informático, Desarrollador Web, Arquitectura de Software, Programador, FullStack,'
+	/>
+	<meta name='author' content='Ariel Salgado Acevedo' />
+</svelte:head>
 
 <div
 	class='relative size-full h-screen overflow-hidden bg-linear-to-t from-background to-black'

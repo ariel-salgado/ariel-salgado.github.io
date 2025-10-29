@@ -3,6 +3,7 @@
 
 	import '../app.css';
 
+	import { Toaster } from 'svelte-sonner';
 	import { onNavigate } from '$app/navigation';
 	import { Particles } from '$lib/components/ui';
 	import { set_window_context } from '$lib/components/ui/window';
@@ -39,3 +40,18 @@
 		{@render children()}
 	</main>
 </div>
+
+<Toaster
+	position='top-center'
+	toastOptions={{
+		unstyled: true,
+		classes: {
+			toast: 'w-92 py-3.5 rounded-md bg-background border border-secondary px-4 flex items-center *:text-primary',
+			title: 'ml-2.5 font-mono font-medium text-sm text-foreground',
+			description: '',
+			actionButton: '',
+			cancelButton: '',
+			closeButton: '',
+		},
+	}}
+/>

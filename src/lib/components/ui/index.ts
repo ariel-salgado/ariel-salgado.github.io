@@ -1,4 +1,5 @@
 export { Link } from './link';
+export { Button } from './button';
 export { Particles } from './particles';
 export { Video, Picture } from './picture';
 export { Badge, BadgeList } from './badge';

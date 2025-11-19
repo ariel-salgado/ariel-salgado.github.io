@@ -29,8 +29,41 @@
 	{#snippet content()}
 		<section class='flex flex-col px-10 pt-6 pb-24'>
 			<AccordionItem
+				subtitle='Noviembre 2025 - Actualidad'
+				title='Desarrollador Fullstack @ OnStageObra'
+			>
+				<div class='space-y-4'>
+					<p class='leading-relaxed'>
+						Hemos desarrollado una plataforma para la gestión
+						integral de obras, enfocada en avance, control de
+						calidad y recepción, en un entorno digital colaborativo.
+					</p>
+					<p class='leading-relaxed'>
+						Nuestro software permite visualizar tu proyecto en
+						modelos 3D, realizar revisiones en terreno a través de
+						una app móvil, y ejecutar protocolos precisos de
+						calidad. Con actualizaciones en tiempo real y métricas
+						detalladas, agilizamos procesos, disminuimos tareas
+						repetitivas y mejoramos la toma de decisiones durante
+						las etapas de la obra.
+					</p>
+
+					<Link
+						class='text-primary'
+						href='https://onstageobra.cl/'
+						target='_blank'
+					>
+						Enlace
+						<ArrowSquareOutIcon
+							class='inline-block size-4 align-middle'
+						/>
+					</Link>
+				</div>
+				<BadgeList items={USED_TECH.onstageobra} />
+			</AccordionItem>
+			<AccordionItem
 				subtitle='Octubre 2024 - Octubre 2025'
-				title='Ingeniero de Software @ RedOcean'
+				title='Chief Technology Officer @ RedOcean'
 			>
 				<div class='space-y-4'>
 					<p class='leading-relaxed'>
@@ -59,7 +92,7 @@
 					</Link>
 				</div>
 				<Video src={RedOceanDemo} />
-				<BadgeList items={USED_TECH.demps} />
+				<BadgeList items={USED_TECH.redocean} />
 			</AccordionItem>
 
 			<AccordionItem

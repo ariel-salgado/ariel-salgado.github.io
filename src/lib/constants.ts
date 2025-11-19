@@ -1,3 +1,12 @@
+export const LAST_JOB = {
+	company: 'OnStageObra',
+	job_title: 'FullStack Developer',
+	start_date: 'Noviembre 2025',
+	end_date: '',
+	url: 'https://onstageobra.cl/',
+	active: true,
+};
+
 export const PERSONAL_SKILLS = [
 	'Análisis de requerimientos de software',
 	'Diseño y modelado de bases de datos',
@@ -141,6 +150,14 @@ export const LEARNING = [
 ];
 
 export const USED_TECH = {
+	onstageobra: [
+		'Flask',
+		'Boto3',
+		'Botocore',
+		'AWS S3',
+		'AWS S3 Vectors',
+		'OpenAI',
+	],
 	redocean: [
 		'SvelteKit',
 		'Vite',

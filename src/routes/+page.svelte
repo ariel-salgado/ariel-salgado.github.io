@@ -9,6 +9,7 @@
 	import IdentificationCardIcon from 'phosphor-svelte/lib/IdentificationCard';
 
 	import { Link } from '$lib/components/ui';
+	import { LAST_JOB } from '$lib/constants';
 	import {
 		Faq,
 		AboutMe,
@@ -46,21 +47,23 @@
 </div>
 
 <!-- Top Banner -->
-<div
-	class='
-		absolute top-4 right-4 flex items-center gap-x-3 rounded-2xl border-2 border-primary/60 px-6 py-2
-		text-foreground select-none
-	'
->
-	<span class='relative flex size-3'>
-		<span
-			class='absolute inline-flex size-full animate-ping rounded-full bg-foreground opacity-75'
-		></span>
-		<span class='relative inline-flex size-3 rounded-full bg-primary/60'
-		></span>
-	</span>
-	<span>Buscando trabajo...</span>
-</div>
+{#if !LAST_JOB.active}
+	<div
+		class='
+			absolute top-4 right-4 flex items-center gap-x-3 rounded-2xl border-2 border-primary/60 px-6 py-2
+			text-foreground select-none
+		'
+	>
+		<span class='relative flex size-3'>
+			<span
+				class='absolute inline-flex size-full animate-ping rounded-full bg-foreground opacity-75'
+			></span>
+			<span class='relative inline-flex size-3 rounded-full bg-primary/60'
+			></span>
+		</span>
+		<span>Buscando trabajo...</span>
+	</div>
+{/if}
 
 <!-- Signature -->
 <aside

@@ -3,7 +3,7 @@
 	import GraduationCapIcon from 'phosphor-svelte/lib/GraduationCap';
 	import ProfilePicture from '$lib/assets/images/profile.jpg?enhanced';
 
-	import { EDUCATION, PERSONAL_SKILLS } from '$lib/constants';
+	import { LAST_JOB, EDUCATION, PERSONAL_SKILLS } from '$lib/constants';
 
 	import {
 		Link,
@@ -45,10 +45,10 @@
 					</h3>
 					<p class='text-lg'>Ingeniero Civil Informático</p>
 					<p class='text-lg'>
-						Ex Chief Information Officer en <Link
+						{LAST_JOB.job_title} en <Link
 							class='text-primary'
-							href='https://redoceanservice.com'
-							target='_blank'>RedOcean</Link
+							href={LAST_JOB.url}
+							target='_blank'>{LAST_JOB.company}</Link
 						>
 					</p>
 				</hgroup>

@@ -2,9 +2,9 @@ export const LAST_JOB = {
 	company: 'OnStageObra',
 	job_title: 'FullStack Developer',
 	start_date: 'Noviembre 2025',
-	end_date: '',
+	end_date: 'Diciembre 2025',
 	url: 'https://onstageobra.cl/',
-	active: true,
+	active: false,
 };
 
 export const PERSONAL_SKILLS = [
@@ -157,6 +157,8 @@ export const USED_TECH = {
 		'AWS S3',
 		'AWS S3 Vectors',
 		'OpenAI',
+		'MySQL',
+		'Docker',
 	],
 	redocean: [
 		'SvelteKit',

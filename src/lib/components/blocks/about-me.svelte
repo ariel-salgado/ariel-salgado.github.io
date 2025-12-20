@@ -45,7 +45,7 @@
 					</h3>
 					<p class='text-lg'>Ingeniero Civil Informático</p>
 					<p class='text-lg'>
-						{LAST_JOB.job_title} en <Link
+						{!LAST_JOB.active ? 'Ex - ' : ''}{LAST_JOB.job_title} en <Link
 							class='text-primary'
 							href={LAST_JOB.url}
 							target='_blank'>{LAST_JOB.company}</Link

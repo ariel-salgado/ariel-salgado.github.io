@@ -29,27 +29,26 @@
 	{#snippet content()}
 		<section class='flex flex-col px-10 pt-6 pb-24'>
 			<AccordionItem
-				subtitle='Noviembre 2025 - Actualidad'
+				subtitle='Noviembre 2025 - Diciembre 2025'
 				title='Desarrollador Fullstack @ OnStageObra'
 			>
 				<div class='space-y-4'>
 					<p class='leading-relaxed'>
-						Plataforma para la gestión de obras que
-						centraliza el avance, el control de calidad y la
-						recepción en un entorno digital colaborativo.
-						Facilitando la conexión entre equipos en terreno y
-						en oficina mediante herramientas que agilizan
-						procesos clave, mejoran la trazabilidad y permiten
-						una gestión más pronta y precisa en todas las etapas
-						del proyecto.
+						Plataforma para la gestión de obras que centraliza el
+						avance, el control de calidad y la recepción en un
+						entorno digital colaborativo. Facilitando la conexión
+						entre equipos en terreno y en oficina mediante
+						herramientas que agilizan procesos clave, mejoran la
+						trazabilidad y permiten una gestión más pronta y precisa
+						en todas las etapas del proyecto.
 					</p>
 
 					<p class='leading-relaxed'>
-						En mi rol dentro de la empresa, he desarrollado la
-						lógica para integrar vectores en AWS S3 y potenciar
-						el autocompletado de información mediante predicciones
-						de texto con OpenAI, migrando desde un sistema apoyado
-						en S3 y planillas hacia una base de datos vectorial
+						En mi rol dentro de la empresa, desarrollé la lógica
+						para integrar vectores en AWS S3 y potenciar el
+						autocompletado de información mediante predicciones de
+						texto con OpenAI, migrando desde un sistema apoyado en
+						S3 y planillas hacia una base de datos vectorial
 						dedicada, lo que permitió acelerar la obtención de top-k
 						relevantes y mejorar de forma significativa la velocidad
 						y eficiencia de las consultas.
@@ -76,22 +75,22 @@
 					<p class='leading-relaxed'>
 						Hemos desarrollado una plataforma SaaS para la
 						predicción de deriva oceánica, en asociación con la
-						Armada de Chile.
-						Esta plataforma cuenta con un mapa interactivo que
-						permite visualizar el movimiento de partículas a la
-						deriva, impulsadas por corrientes en mar abierto.
-						Ofreciendo un pronóstico de hasta 30 días sobre el
-						comportamiento de las corrientes y su impacto en cuerpos
-						como personas, embarcaciones o contaminantes.
+						Armada de Chile. Esta plataforma cuenta con un mapa
+						interactivo que permite visualizar el movimiento de
+						partículas a la deriva, impulsadas por corrientes en mar
+						abierto. Ofreciendo un pronóstico de hasta 30 días sobre
+						el comportamiento de las corrientes y su impacto en
+						cuerpos como personas, embarcaciones o contaminantes.
 					</p>
 					<p class='leading-relaxed'>
 						En mi rol dentro de la empresa, desarrollé la interfaz
 						web que permite configurar el modelo de simulación y
-						visualizar partículas a la deriva junto a su rastro temporal.
-						También implementé un backend robusto con sesiones de usuario
-						y almacenamiento de datos en SQLite, integrando todos los
-						componentes del sistema. Finalmente, dockericé los servicios
-						para su despliegue en Google Cloud Platform (GCP).
+						visualizar partículas a la deriva junto a su rastro
+						temporal. También implementé un backend robusto con
+						sesiones de usuario y almacenamiento de datos en SQLite,
+						integrando todos los componentes del sistema.
+						Finalmente, dockericé los servicios para su despliegue
+						en Google Cloud Platform (GCP).
 					</p>
 
 					<Link

@@ -1,15 +1,29 @@
+import adapter from '@sveltejs/adapter-static';
 import tailwindcss from '@tailwindcss/vite';
-import devtoolsJson from 'vite-plugin-devtools-json';
 
-import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { enhancedImages } from '@sveltejs/enhanced-img';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [
-		enhancedImages(),
-		sveltekit(),
 		tailwindcss(),
-		devtoolsJson(),
+		sveltekit({
+			compilerOptions: {
+				runes: ({ filename }) =>
+					filename.split(/[/\\]/).includes('node_modules')
+						? undefined
+						: true,
+				modernAst: true,
+				experimental: {
+					async: true,
+				},
+			},
+			adapter: adapter({
+				pages: 'build',
+				assets: 'build',
+				precompress: true,
+				strict: true,
+			}),
+		}),
 	],
 });

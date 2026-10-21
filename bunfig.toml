@@ -1,0 +1,16 @@
+smol = true
+telemetry = false
+
+[install]
+exact = true
+auto = "auto"
+linker = "isolated"
+globalStore = false
+hoist = false
+
+[install.cache]
+disable = true
+
+[run]
+shell = "system"
+bun = true
